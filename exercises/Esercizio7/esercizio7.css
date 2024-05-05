@@ -1,16 +1,6 @@
-.container {
-  /* Qui si identifica la classe di tutto ciò che sta nel div */
-  margin: 20px;
-}
-#target {
-  padding: 10px;
-  background-color: cyan;
-  margin-bottom: 10px;
-}
-#button {
-  padding: 8px 20px;
-  background-color: lightcoral;
-  color: white;
-  border: none;
-  cursor: pointer;
+#oldElement,
+#newElement {
+  font-size: 18px;
+  color: red;
+  font-family: Arali, sans-serif;
 }
