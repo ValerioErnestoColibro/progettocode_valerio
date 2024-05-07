@@ -14,17 +14,23 @@
         dato, come numeri, stringhe, oggetti, funzioni, ecc. Un array può essere
         dichiarato e inizializzato in diversi modi, ad esempio:
       </p>
-      <p>// Dichiarazione e inizializzazione di un array vuoto</p>
-      <p><code>let arrayVuoto = [];</code></p>
-      <br />
-      <p>// Dichiarazione e inizializzazione di un array con elementi</p>
-      <p><code>let numeri = [1, 2, 3, 4, 5];</code></p>
-      <br />
-      <p>// Array di oggetti</p>
-      <p><code>let persone = [</code></p>
-      <p><code>{ nome: 'Mario', cognome: 'Rossi'},</code></p>
-      <p><code>{ nome: 'Luigi', cognome: 'Verdi'}</code></p>
-      <p><code>];</code></p>
+      <ul>
+        <li>
+          <p>Dichiarazione e inizializzazione di un array vuoto</p>
+          <p><code>let arrayVuoto = [];</code></p>
+        </li>
+        <li>
+          <p>// Dichiarazione e inizializzazione di un array con elementi</p>
+          <p><code>let numeri = [1, 2, 3, 4, 5];</code></p>
+        </li>
+        <li>
+          <p>// Array di oggetti</p>
+          <p><code>let persone = [</code></p>
+          <p><code>{ nome: 'Mario', cognome: 'Rossi'},</code></p>
+          <p><code>{ nome: 'Luigi', cognome: 'Verdi'}</code></p>
+          <p><code>];</code></p>
+        </li>
+      </ul>
       <p>
         Gli elementi in un array sono accessibili tramite un indice numerico,
         dove il primo elemento ha indice 0, il secondo elemento ha indice 1 e
@@ -63,8 +69,8 @@
         <h2>Metodi mutabili</h2>
         <h3>
           <p>
-            Sono quei metodi che modificano gli array. Ecco alcuni dei metodi
-            più comuni:
+            JavaScript offre molti metodi integrati per manipolare gli array.
+            Ecco alcuni dei metodi più comuni:
           </p>
           <ul>
             <li>
@@ -113,20 +119,9 @@
               </p>
               <p><code>console.log(numeri);</code>// Output: [1, 2, 4, 5]</p>
             </li>
-            <li>
-              <code>sort()</code>: è utilizzata per ordinare gli elementi di un
-              array in base a un criterio definito, che può essere la loro
-              posizione nell'ordine alfabetico o un criterio personalizzato
-              definito dall'utente.
-              <p><code></code></p>
-            </li>
           </ul>
           <h2>Metodi Immutabili</h2>
           <h3>
-            <p>
-              Sono metodi che non vanno a modificare l'array. Ecco alcuni
-              esempi:
-            </p>
             <ul>
               <li>
                 <p>
@@ -152,8 +147,8 @@
               <li>
                 <p>
                   <code>filter()</code>: Crea un nuovo array contenente solo gli
-                  elementi che soddisfano una determinata condizione. Non
-                  modifica l'array originale.
+                  elementi che soddisfano una determinata condizione 'true' o
+                  'false'. Non modifica l'array originale.
                 </p>
               </li>
               <li>
