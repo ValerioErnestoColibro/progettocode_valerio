@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le classi in Javascript</title>
+  </head>
+  <body>
+    <h1>Le classi in Javascript</h1>
+    <h2>
+      <p>
+        Le classi in JavaScript sono una caratteristica introdotta nel
+        linguaggio a partire da ECMAScript 2015 (conosciuto anche come ES6).
+        Consentono di definire modelli per creare oggetti con proprietà e metodi
+        simili.
+      </p>
+      <p>Ecco alcuni concetti chiave:</p>
+    </h2>
+    <h3>
+      <ul>
+        <li>
+          <p>
+            Definizione di classe: Per definire una classe, si utilizza la
+            parola chiave class, seguita dal nome della classe. Ad esempio:
+          </p>
+          <p><code>class Persona {</code></p>
+          <p>class Persona {</p>
+          <p>// Definizione della classe</p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          <p>
+            Costruttore: Il costruttore è un metodo speciale all'interno di una
+            classe che viene chiamato automaticamente quando si crea una nuova
+            istanza della classe. Viene definito utilizzando il metodo
+            constructor. Ad esempio:
+          </p>
+          <p><code>class Persona {</code></p>
+          <p><code>constructor(nome, cognome) {</code></p>
+          <p><code>this.nome = nome;</code></p>
+          <p><code>this.cognome = cognome;</code></p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          <p>
+            Proprietà e metodi: All'interno della classe, è possibile definire
+            proprietà e metodi. Le proprietà sono variabili associate
+            all'istanza della classe, mentre i metodi sono funzioni associate
+            all'istanza della classe. Ad esempio:
+          </p>
+          <p><code>class Persona {</code></p>
+          <p><code>constructor(nome, cognome) {</code></p>
+          <p><code>this.nome = nome;</code></p>
+          <p><code>this.cognome = cognome;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>saluta() {</code></p>
+          <p>console.log(Ciao, sono ${this.nome} ${this.cognome});</p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          <p>
+            Creazione di un'istanza: Per creare un nuovo oggetto basato su una
+            classe, si utilizza la parola chiave new seguita dal nome della
+            classe e eventuali argomenti richiesti dal costruttore. Ad esempio:
+          </p>
+          <p><code>const persona1 = new Persona('Mario', 'Rossi');</code></p>
+        </li>
+        <li>
+          <p>
+            Ereditarietà: È possibile creare una gerarchia di classi in
+            JavaScript utilizzando l'ereditarietà. Una classe figlia può
+            estendere una classe genitore utilizzando la parola chiave
+            <code>extends</code>. Ad esempio:
+          </p>
+          <p><code>class Studente extends Persona {</code></p>
+          <p><code>constructor(nome, cognome, corso) {</code></p>
+          <p>
+            <code>super(nome, cognome);</code> // Chiamata al costruttore della
+            classe genitore
+          </p>
+          <p><code>this.corso = corso;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>studia() {</code></p>
+          <p>
+            <code
+              >console.log('${this.nome} sta studiando ${this.corso}');'</code
+            >
+          </p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+        </li>
+      </ul>
+    </h3>
+  </body>
+</html>

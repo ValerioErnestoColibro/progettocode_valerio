@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le classi di JavaScript</title>
+  </head>
+  <body>
+    <h1>Le classi di Javascript</h1>
+    <h2>
+      Dato che un oggetto in JS è un dato con un valore, la proprietà è una
+      chiave con cui scavare, e i metodi sono funzioni contestualizzate
+      all'oggetto, perchè le stringhe hanno metodi e proprietà? Perchè in JS
+      puoi trovare entrambi anche dentro una stringa segnata con
+      <code>"".</code> Qui entrano in gioco le classi di JS, utili a creare
+      oggetti (dato che JS è un linguaggio orientato agli oggetti). Tale oggetto
+      viene considerato l'istanza della classe. Ecco un esempio:
+      <p><code>class Auto {</code></p>
+      <p><code>constructor(marca, modello, anno, carburante) {</code></p>
+      <p><code>this.marca = marca;</code> // Proprietà</p>
+      <p><code>this.modello = modello;</code> // Proprietà</p>
+      <p><code>this.anno = anno;</code> // Proprietà</p>
+      <p><code>this.carburante = carburante;</code> // Proprietà</p>
+      <p><code>} }</code></p>
+      <br />
+      <p>Per richiamare una classe, basta fare: (da completare)</p>
+      <br />
+      <p>
+        La classe <code>new Object</code> permette di costruire un modello che
+        crea per noi una struttura di dati. Esempio:
+      </p>
+      <code
+        >class Persona { constructor(nomeIniziale) { this.name = nomeIniziale; }
+        }</code
+      >
+      <p>
+        Le classi di JS usano la lettera iniziale Maiuscola. Con la lettera
+        iniziale minuscola, si tratta di una funzione.
+      </p>
+    </h2>
+  </body>
+</html>
