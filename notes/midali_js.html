@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript - Midali</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Javascript in 6 ore</h1>
+    <h2>Introduzione a JS</h2>
+    <h3>
+      <ul>
+        <li>
+          JS è il linguaggio di programmazione che offre dinamicità alla pagina;
+        </li>
+        <li>Possiamo salvare dei dati dentro delle variabili e molto altro;</li>
+        <li>
+          Ci sono anche gli APA, che sono dei livelli aggiunti sul linguaggio
+          JS;
+        </li>
+        <li>L'interpretazione è dall'alto verso il basso;</li>
+        <li>JS è un codice interpreato, cioè viene tradotto dal browser;</li>
+        <li>
+          Invece un codice compilato viene tradotto in linguaggio macchina e poi
+          tradotto dal browser (C++);
+        </li>
+        <li>
+          JS è un linguaggio di programmazione lato client (ossia accade nel
+          nostro browser), i codici lato server invece accadono solo
+          parzialmente da noi. La maggior parte viene calcolato in un computer
+          esterno (Java, Python);
+        </li>
+        <li>Internamente si può implementare JS col tag 'script';</li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Le variabili su JS</h2>
+    <h3>
+      <ul>
+        <li>La variabile è un gruppo di dati;</li>
+        <li>
+          La variabile si dichiara con
+          <code>let nome = "testoVariabile"</code> e per richiamarla si usa
+          <code>console.log(nome)</code> e avremo come output
+          <code>testoVariabile</code>;
+        </li>
+        <li>
+          Ricorda che nome, Nome e NOME non sono riconosciuti allo stesso modo
+          da JS;
+        </li>
+        <li>Al massimo puoi unire due parole così: <code>nomeUtente</code>;</li>
+        <li>
+          Non iniziare i nomi delle variabili con numeri o segni di
+          punteggiatura;
+        </li>
+        <li>
+          Per inizializzare la variabile: <code>let nome = 'Valerio'</code>;
+        </li>
+        <li>
+          Si può sia usare <code>var</code> che <code>let</code> per manipolare
+          le variabili. E' comunque più usato <code>let</code> rispetto a
+          <code>var</code> QUESTO PER LE VARIABILI RIASSEGNABILI;
+        </li>
+        <li>
+          Si può usare anche <code>const nome = "Mario"</code> per dichiarare
+          una variabile che non si riassegna. Ancora, si può usare
+          <code>const</code> per valori che non cambiano come l'indirizzo di un
+          database. Esempio:
+          <code>const persona = 'database:hosting.com'</code>;;
+        </li>
+        <li>
+          Per aggiornare una variabile dopo averla dichiarata, basta fare:
+          <code>nome = 'Ernesto'</code>;
+        </li>
+        <li>
+          Le variabili possono essere numeri interi o numeri con la virgola
+          (float). Oppure se c'è del testo, si chiamano 'stringhe' in quanto
+          segnati da semplici apici ''. Infine possono essere anche booleani,
+          ossia ti danno come risultato 'true' o 'false';
+        </li>
+        <li>
+          L'array è una collezione di dati. Si apre con le []:
+          <code>let collezione = [1, 2, 3, 4, 5]</code> oppure del testo come
+          <code>let listaPersone = ['Aldo', 'Giovanni', 'Giacomo']</code>;
+        </li>
+        <li>
+          Gli array partono a contare la posizione degli elementi da 0, mentre
+          l'indice (index) parte da 1;
+        </li>
+        <li>
+          Se voglio conoscere l'elemento in posizione 1, basta fare:
+          <code>console.log(listaPersone[1]);</code> e avrò come output
+          <code>'Giovanni'</code>;
+        </li>
+        <li>
+          Per oggetti si intendono degli schedari informatici di
+          soggetti/oggetti reali. Queste informazioni sono date da proprietà, e
+          le proprietà sono rappresentate da una coppia chiave-valore. Ogni
+          proprietà di un oggetto può essere vista come una variabile che è
+          collegata all'oggetto e che ha un nome (chiave) e un valore. Esempio:
+          <p><code>let persona = {</code></p>
+          <p><code>nome: 'Mario',</code></p>
+          <p><code>cognome: 'Rossi',</code></p>
+          <p><code>eta: 30</code></p>
+          <p><code>nazionalita: 'Italia',</code></p>
+          <p>
+            <code>macchinePossedute: ['Panda', 'Polo']</code> // Dato che ci
+            sono varie opzioni, si crea un array;//
+          </p>
+          <p><code>};</code></p>
+          <p>
+            Per richiamare una caratteristica, basta fare:
+            <code>console.log(persona.nome);</code> e darà sulla console la
+            stringa 'Mario';
+          </p>
+          <p>
+            Se invece voglio conoscere una caratteristica dentro un array, farò:
+            <code>console.log(persona.macchinePossedute[1])</code> e avrò come
+            output la stringa 'Polo';
+          </p>
+        </li>
+        <li>
+          Per tipizzazione dinamica si intende la libertà di non dichiarare
+          obbligatoriamente il tipo di variabile. Questo metodo funziona per
+          pochi linguaggi di programmazione come JS, mentre altri linguaggi come
+          TypeScript necessitano di più precisione;
+        </li>
+        <li>
+          Le costanti sono valori che non devono cambiare nel tempo come
+          l'indirizzo del database e simili. Esempio:
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Lavorare con i numeri</h2>
+    <h3>
+      <ul>
+        <li>
+          I numeri possono essere interi (10), float (1.1234567), double
+          (1.1234567890), binary (0 e 1), octal ed esadecimali;
+        </li>
+        <li>Questi dati offriranno sempre 'number' come output;</li>
+        <li>
+          C'è un metodo chiamato 'toFixed' per visualizzare meglio i numeri dopo
+          la virgola. Esempio: <code>const numero = 1.23456789</code>; se
+          facciamo <code>console.log(numero.toFixed(2));</code> avremo come
+          output 1.23;
+        </li>
+        <li>
+          Si può anche convertire una stringa in un numero. Esempio:
+          <code>const numero = '43';</code> e poi faccio
+          <code>console.log(typeof numero);</code> avrò come output la parola
+          'string';
+        </li>
+        <li>
+          Se invece vogliamo fare un'operazione (addizione, sottrazione, ecc.)
+          con il "numero della stringa", basta fare:
+          <code>console.log(Number(numero) + 1);</code> e l'output sarà 44;
+        </li>
+        <li>
+          Come operatori abbiamo: + - * / % ** (addizione, sottrazione,
+          moltiplicazione, divisione, resto della divisione e potenza). Da qui
+          si capisce che se il resto di una divisione è diverso da 0 allora è un
+          numero dispari, se invece il resto è 0 avremo un numero pari;
+        </li>
+        <li>
+          La precedenza degli operatori: * e / hanno la precedenza su + e - ;
+        </li>
+        <li>
+          Operatori di incremento e decremento:
+          <code>let numero = 10; numero++; console.log(numero);</code> avrà come
+          output 11. Oppure si fa <code>numero--;</code> per avere come output
+          9;
+        </li>
+        <li>
+          Operatori di assegnazione:
+          <code>let numero = 10; numero =+ 5; console.log(numero)</code> ci darà
+          come output 15. Stesso discorso con -=, *= e /=;
+        </li>
+        <li>
+          Operatori di comparazione: == Esempio:
+          <code>let numero = 10; console.log(numero < 11);</code> ci darà come
+          output un valore booleano (in questo caso 'true'). Idem coi segni >,
+          <= e =>. Poi ci sono anche == (per vedere se la variabile corrisponde
+          al valore da noi indicato) oppure !== (per vedere se la variabile è
+          diversa dal valore da noi indicato), e poi === per confrontare sia il
+          valore che l'identità. Esempio:
+          <code>let numero = '10'; console.log(numero === 10)</code> avremo come
+          outpu 'false' perchè 10 è una stringa, non un numero;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Lavorare con le stringhe</h2>
+    <h3>
+      <ul>
+        <li>
+          Una stringa si crea così:
+          <code>let testo = "Questa è una stringa";</code>
+        </li>
+        <li>
+          Si preferiscono "" a '' perchè col primo si possono inserire parole
+          con l'apostrofo. Si può evitare usando il simbolo "escape\" con un
+          esempio: <code>let testo = 'L\'albero è verde';</code>
+        </li>
+        <li>
+          Per concatenare le stringhe, basta fare:
+          <code
+            >let nome = "Mario"; let testo = "Ciao mi chiamo" + nome;
+            console.log(testo)</code
+          >
+          ci darà come output "Ciao mi chiamo Mario";
+        </li>
+        <li>
+          Su JS, cose come
+          <code>let nome = 'Mario' + 56; console.log(nome)</code> ci darà come
+          output "Mario56". Per convertire da numero a stringa si usa il comando
+          "toString", invece per andare da stringa a numero si usa "Number";
+        </li>
+        <li>
+          I "Template Literals" inseriscono dentro una stringa delle funzioni o
+          delle variabili evitando l'uso di "escape\" con l'uso dei backtick ``.
+          Esempio: <code>let numero = `''L'albero l'ala l'uso''`</code> oppure
+          <code
+            >let testo = "Testo della variabile"; let elemento = `'h1'${testo}
+            nuova'h1'`</code
+          >
+          dopodichè lo mandiamo a schermo con
+          <code>document.body.innerHTML = elemento;</code> e avremo il testo
+          della variabile visualizzato dentro la stringa;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Metodi delle stringhe</h2>
+    <h3>
+      <ul>
+        <li>Una stringa E' ANCHE UN OGGETTO e quindi ha anche dei metodi;</li>
+        <li>
+          Per trovare la lunghezza di una stringa, basta fare:
+          <code>let strings = "Ciao"; console.log(string.length)</code> ci darà
+          come output 4 ossia gli elementi della stringa;
+        </li>
+        <li>
+          Per identificare un carattere specifico, facciamo:
+          <code
+            >let strings = "Testo della stringa digitata";
+            console.log(strings[0]);</code
+          >
+          ci darà come output "T" ossia il primo elemento della stringa. Invece
+          per vedere l'ultima lettera si può fare:
+          <code
+            >let stringa = "JavaScript"; let ultimaLettera =
+            stringa[stringa.length - 1]; console.log(ultimaLettera); // Output:
+            "t"</code
+          >;
+        </li>
+        <li>
+          Prendere una parte di stringa: si fa
+          <code>console.log(strings.indexOf('stringa'));</code> ci darà come
+          output 11 ossia il punto di inizio della parola voluta. Si può anche
+          fare
+          <code
+            >let indexStringa = stringa.indexOf('stringa');
+            console.log(strings.slice(indexVariabile);)</code
+          >
+          e avremo come output "digitata" perchè ha tagliato il resto;
+        </li>
+        <li>
+          Si può cambiare anche il "case" della stringa:
+          <code>console.log(strings.toUpperCase())</code> e darà come output
+          "TESTO DELLA VARIABILE DIGITATA" scrivendo la stringa in maiuscolo.
+          Invece con <code>toLowerCase</code> metteremo tutto minuscolo. Infine
+          usiamo "replace" per sostituire una parola di una stringa:
+          <code>console.log(strings.replace('digitata', 'scritta'))</code> e
+          avremo come output "Testo della variabile scritta";
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Array</h2>
+    <h3>
+      <ul>
+        <li>
+          Un array è un insieme di dati e si crea facendo
+          <code>let array = [1, 2, 3]; console.log(array)</code> ci darà come
+          output 1, 2, 3;
+        </li>
+        <li>ANCHE L'ARRAY E' UN OGGETTO, dunque ci saranno dei metodi;</li>
+        <li>Anche qui si parte a contare da zero come per le stringhe;</li>
+        <li>
+          Come per le stringhe, possiamo verificarne posizione dell'elemento,
+          indice, lunghezza e simili con gli stessi metodi;
+        </li>
+        <li>
+          Per accedere ad un elemento specifico:
+          <code>console.log(array[numeroPosizioneElemento])</code>;
+        </li>
+        <li>
+          Per convertire una variabile in un array, prendiamo queste due righe
+          di codice:
+          <code
+            >let citta = "Milano,Firenze,Roma,Napoli,Palermo"; let data =
+            citta.split(','); console.log(data);</code
+          >
+          avremo come output un nuovo array togliendo le virgole;
+        </li>
+        <li>
+          Si può anche fare il contrario, ossia convertire un array in una
+          stringa. Esempio:
+          <code
+            >let data = ["Milano", "Firenze", "Roma", "Napoli", "Palermo"]; let
+            citta = data.join('-'); console.log(citta);</code
+          >
+          e avremo una stringa di elementi testuali separate da un trattino;
+        </li>
+        <li>
+          Per aggiungere e rimuovere elementi da un array, si può fare così:
+          <code>data.push("Cagliari"); console.log(data);</code> e avremo una
+          nuova città in fondo al nostro array.
+        </li>
+        <li>
+          Per invece eliminare un elemento dell'array, basta fare:
+          <code>data.pop()</code> e non avremo più "Cagliari" come elemento
+          dell'array.
+        </li>
+        <li>
+          Per levare un elemento all'inizio dell'array, faremo:
+          <code>data.shift()</code> e sparirà l'elemento "Milano";
+        </li>
+        <li>
+          Per invece aggiungere un elemento all'inizio dell'array, faremo:
+          <code>data.unshift("Torino");</code> e avremo l'elemento "Torino"
+          all'inizio dell'array;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Condizioni con "If...else..."</h2>
+    <h3>
+      <ul>
+        <li>
+          "If......else" serve per stabilire una condizione del tipo:
+          "Se...allora...altrimenti...";
+        </li>
+        <li>
+          Facciamo un esempio pratico:
+          <p><code>let nome = "Luca"; let numero = 15;</code></p>
+          <br />
+          <p><code>script</code></p>
+          <p><code>if (nome == "Luca") {</code></p>
+          <p><code>console.log("Ciao Luca");</code></p>
+          <p><code>}else{</code></p>
+          <p><code>console.log("Ciao persona anonima");</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>Ci sono anche volte in cui "else" non viene usato;</li>
+        <li>
+          Si può anche usare "Else if" nel caso in cui ci siano varie
+          condizioni;
+        </li>
+        <li>
+          Nella comparazione, si usano == (uguale solo di valore), === (uguale
+          valore e il tipo stringa, cifra, ecc.) e !== (diverso di valore e
+          tipo);
+        </li>
+        <li>
+          Si possono anche mettere due o più condizioni dentro "If" usando &&:
+          <p><code>script</code></p>
+          <p><code>if (numero < 20 && numero % 1) {</code></p>
+          <p><code>console.log("Giusto");</code></p>
+          <p><code>}else{</code></p>
+          <p><code>console.log("Sbagliato");</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>
+          Possiamo anche usare "Or" che si indica con ||. Il risultato sarà
+          giusto se ALMENO UNA delle condizioni è verificata:
+          <p><code>script</code></p>
+          <p><code>if (numero < 10 || numero % 1) {</code></p>
+          <p><code>console.log("Giusto");</code></p>
+          <p><code>}else{</code></p>
+          <p><code>console.log("Sbagliato");</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code> //avremo come output "Giusto";</p>
+        </li>
+        <li>
+          Il "Not" si usa col simbolo ! per verificare se la condizione da noi
+          negata è giusta:
+          <p><code>script</code></p>
+          <p><code>if (!(numero < 20)) {</code></p>
+          <p><code>console.log("Giusto");</code></p>
+          <p><code>}else{</code></p>
+          <p><code>console.log("Sbagliato");</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code> //avremo come output "Sbagliato"</p>
+          <br />
+          <p>Se invece facciamo:</p>
+          <p><code>script</code></p>
+          <p><code>if (!(numero > 20)) {</code></p>
+          <p><code>console.log("Giusto");</code></p>
+          <p><code>}else{</code></p>
+          <p><code>console.log("Sbagliato");</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code> //avremo come output "Giusto";</p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Switch Statement</h2>
+    <h3>
+      <ul>
+        <li>
+          Se dobbiamo inserire troppi "If", si usa "Switch". Riprendendo gli
+          esempi precedenti:
+          <p><code>script</code></p>
+          <p><code>switch (nome) {</code></p>
+          <p><code>case "Luca":</code></p>
+          <p><code>console.log("Ciao Luca");</code></p>
+          <p><code>break;</code></p>
+          <p><code>case "Marco":</code></p>
+          <p><code>console.log("Ciao Marco");</code></p>
+          <p><code>break;</code></p>
+          <p><code>case "Gino":</code></p>
+          <p><code>console.log("Ciao Gino");</code></p>
+          <p><code>break;</code></p>
+          <p><code>default:</code></p>
+          <p><code>console.log("Non conosco questo nome");</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>Il "break" serve per evitare che il codice vada avanti;</li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Ternary Operator</h2>
+    <h3>
+      <ul>
+        <li>
+          <p><code>script</code></p>
+          <p><code>let numero = 15;</code></p>
+          <p>
+            <code
+              >let nome = (numero < 20) ? "Risultato Giusto" : "Risultato
+              Sbagliato";</code
+            >
+          </p>
+          <p><code>console.log(nome);</code></p>
+          <p><code>script</code></p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2></h2>
+    <h3>
+      <ul>
+        <li>Riparti da 1:50:37</li>
+      </ul>
+    </h3>
+    <h2>
+      <a href="https://www.youtube.com/watch?v=vL5ldIUqnb0">Fonte originale</a>
+    </h2>
+  </body>
+</html>
