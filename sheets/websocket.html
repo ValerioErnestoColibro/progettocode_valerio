@@ -1,0 +1,117 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket</title>
+  </head>
+  <body>
+    <h1>WebSocket</h1>
+    <br />
+    <h2>Definizione</h2>
+    <h3>
+      <p>
+        WebSocket è una tecnologia che fornisce una comunicazione bidirezionale full-duplex tra client e server su una
+        singola connessione TCP. Questo protocollo è stato standardizzato come RFC 6455 ed è progettato per essere
+        utilizzato nelle applicazioni web moderne che richiedono aggiornamenti in tempo reale, come chat, giochi online,
+        applicazioni di collaborazione in tempo reale e altro ancora.
+      </p>
+      <p>Ecco una panoramica dei principali concetti e funzionalità dei WebSocket</p>
+    </h3>
+    <br />
+    <h2>Connessione</h2>
+    <h3>
+      La connessione WebSocket inizia con una handshake HTTP, che viene poi "promossa" a una connessione WebSocket.
+      Durante questo handshake, il client invia una richiesta HTTP con l'intestazione Upgrade: websocket, indicando al
+      server di passare al protocollo WebSocket.
+    </h3>
+    <br />
+    <h2>Comunicazione Bidirezionale</h2>
+    <h3>
+      Una volta stabilita la connessione, sia il client che il server possono inviare dati in qualsiasi momento, senza
+      dover riaprire la connessione. Questo è in contrasto con il tradizionale modello HTTP, dove il client deve fare
+      una richiesta e il server risponde.
+    </h3>
+    <br />
+    <h2>Efficienza</h2>
+    <h3>
+      WebSocket utilizza un protocollo binario che riduce l'overhead rispetto al polling HTTP, rendendolo più efficiente
+      per applicazioni che richiedono aggiornamenti frequenti e in tempo reale.
+    </h3>
+    <br />
+    <h2>Supporto nei browser</h2>
+    <h3>
+      La maggior parte dei moderni browser web supporta WebSocket, rendendolo una scelta pratica per le applicazioni
+      web.
+    </h3>
+    <br />
+    <h2>Esempio di utilizzo in Javascript</h2>
+    <h3>
+      <p>
+        <code>let socket = new WebSocket("ws://esempio.com/socketserver");</code> // Creare una nuova connessione
+        WebSocket
+      </p>
+      <p><code>socket.onopen = function(event) {</code> // Event handler per quando la connessione è aperta</p>
+      <p><code>socket.onopen = function(event) { </code></p>
+      <p><code>console.log("Connessione aperta");</code></p>
+      <p><code>socket.send("Ciao, server!");</code></p>
+      <p><code>};</code></p>
+      <br />
+      <p><code>socket.onmessage = function(event) {</code> // Event handler per quando arriva un messaggio</p>
+      <p><code>console.log("Messaggio ricevuto: " + event.data);</code></p>
+      <p><code>};</code></p>
+      <br />
+      <p><code>socket.onclose = function(event) {</code> // Event handler per quando la connessione è chiusa</p>
+      <p><code>console.log("Connessione chiusa");</code></p>
+      <p><code>};</code></p>
+      <br />
+      <p><code>socket.onerror = function(error) {</code> // Event handler per quando si verifica un errore</p>
+      <p><code>console.error("Errore: " + error.message);</code></p>
+      <p><code>};</code></p>
+    </h3>
+    <br />
+    <h2>Vantaggi dei WebSocket:</h2>
+    <h3>
+      <ul>
+        <li>
+          Bassa Latenza: Essendo una connessione persistente, i WebSocket riducono la latenza rispetto ai metodi di
+          polling tradizionali.
+        </li>
+        <li>Efficienza: Meno overhead di rete rispetto a HTTP.</li>
+        <li>Comunicazione in Tempo Reale: Ideale per applicazioni che richiedono comunicazioni rapide e frequenti.</li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Svantaggi dei WebSocket:</h2>
+    <h3>
+      <ul>
+        <li>
+          Compatibilità: Anche se la maggior parte dei browser moderni supporta WebSocket, ci possono essere problemi di
+          compatibilità con browser o ambienti molto vecchi.
+        </li>
+        <li>
+          Sicurezza: Come tutte le connessioni aperte, possono essere vulnerabili agli attacchi se non adeguatamente
+          protetti (es. con l'uso di WSS, il WebSocket su TLS).
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Utilizzo in Applicazioni Web:</h2>
+    <h3>
+      <ul>
+        <li>Chat e Messaggistica: Applicazioni di messaggistica in tempo reale come Slack o WhatsApp Web.</li>
+        <li>Gaming Online: Giochi multiplayer online che richiedono aggiornamenti rapidi e costanti.</li>
+        <li>
+          Collaborazione in Tempo Reale: Strumenti di collaborazione come Google Docs o applicazioni di editing
+          collaborativo.
+        </li>
+        <li>
+          Aggiornamenti in Tempo Reale: Applicazioni di trading, dashboard di monitoraggio, notifiche push e altro
+          ancora.
+        </li>
+      </ul>
+    </h3>
+  </body>
+</html>
