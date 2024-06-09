@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Il ciclo 'For' in Javascript</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Il ciclo 'For' su Javascript</h1>
+    <h2>Ciclo "For"</h2>
+    <h3>
+      In JavaScript, il ciclo for è comunemente utilizzato per replicare su
+      array, stringhe, o per eseguire un blocco di codice un numero specificato
+      di volte. Ecco un esempio di come utilizzare un ciclo for in JavaScript
+      con i commenti in italiano per spiegare ogni passo.
+    </h3>
+    <br />
+    <h2>#Esempio di un ciclo for classico</h2>
+    <h3>
+      <p>
+        <code>for (let i = 0; i < 10; i++) {</code> // Esempio di ciclo for
+        classico
+      </p>
+      <p><code>console.log("Il valore di i è: " + i);</code></p>
+      <p><code>}</code></p>
+    </h3>
+    <h2>Spiegazione</h2>
+    <h3>
+      <ol>
+        <li>
+          Inizializzazione (let i = 0;): Questa parte inizializza una variabile
+          contatore i a 0. Questo è il punto di partenza del ciclo.
+        </li>
+        <li>
+          Condizione (i < 10;): Questa condizione viene valutata prima di ogni
+          iterazione del ciclo. Se la condizione è vera, il ciclo continua; se è
+          falsa, il ciclo si interrompe.
+        </li>
+        <li>
+          Incremento (i++): Dopo ogni iterazione, i viene incrementato di 1.
+        </li>
+      </ol>
+    </h3>
+    <br />
+    <h2>#Esempio di un ciclo for per iterare su un array</h2>
+    <h3>
+      <p>
+        <code>const frutti = ["mela", "banana", "arancia", "kiwi"];</code> //
+        Esempio di ciclo for per iterare su un array
+      </p>
+      <br />
+      <p><code>for (let i = 0; i < frutti.length; i++) {</code></p>
+      <p><code>console.log("Frutto: " + frutti[i]);</code></p>
+      <p><code>}</code></p>
+    </h3>
+    <h2>Spiegazione</h2>
+    <h3>
+      <ol>
+        <li>Inizializzazione (let i = 0;): Inizializza il contatore i a 0.</li>
+        <li>
+          Condizione (i < frutti.length;): Verifica se i è minore della
+          lunghezza dell'array frutti. Questo garantisce che il ciclo itera su
+          tutti gli elementi dell'array.
+        </li>
+        <li>Incremento (i++): Incrementa i di 1 dopo ogni iterazione.</li>
+      </ol>
+    </h3>
+    <br />
+    <h2>
+      #Esempio di un ciclo for...in per iterare su proprietà di un oggetto
+    </h2>
+    <h3>
+      <p>
+        <code>const persona = {</code> // Esempio di ciclo for...in per iterare
+        su proprietà di un oggetto
+      </p>
+      <p><code>nome: "Luca",</code></p>
+      <p><code>cognome: "Rossi",</code></p>
+      <p><code>età: 30</code></p>
+      <p><code>};</code></p>
+      <br />
+      <p><code>for (let proprietà in persona) {</code></p>
+      <p><code>console.log(proprietà + ": " + persona[proprietà]);</code></p>
+      <p><code>}</code></p>
+    </h3>
+    <h2>Spiegazione</h2>
+    <h3>
+      <ol>
+        <li>
+          Inizializzazione (let proprietà in persona): Per ogni proprietà
+          nell'oggetto persona.
+        </li>
+        <li>
+          Corpo del ciclo: All'interno del ciclo, accede alla proprietà corrente
+          utilizzando la notazione con parentesi quadre persona[proprietà].
+        </li>
+      </ol>
+    </h3>
+    <br />
+    <h2>
+      #Esempio di un ciclo for...of per iterare su elementi iterabili (come
+      array)
+    </h2>
+    <h3>
+      <p>
+        <code>const colori = ["rosso", "verde", "blu"];</code> // Esempio di
+        ciclo for...of per iterare su un array
+      </p>
+      <br />
+      <p><code>for (let colore of colori) {</code></p>
+      <p><code>console.log("Colore: " + colore);</code></p>
+      <p><code>}</code></p>
+    </h3>
+    <h2>Spiegazione</h2>
+    <h3>
+      <ol>
+        <li>
+          Inizializzazione (let colore of colori): Per ogni elemento nell'array
+          colori.
+        </li>
+        <li>
+          Corpo del ciclo: All'interno del ciclo, accede all'elemento corrente
+          dell'array.
+        </li>
+      </ol>
+    </h3>
+  </body>
+</html>
