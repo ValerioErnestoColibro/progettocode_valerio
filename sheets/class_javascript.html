@@ -1,0 +1,203 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le classi su Javascript</title>
+  </head>
+  <body>
+    <h1>Le classi su Javascript</h1>
+    <h3>
+      <p>
+        Le classi in JavaScript sono state introdotte con ECMAScript 6 (ES6) e forniscono una sintassi più pulita e
+        leggibile per creare oggetti e gestire l'ereditarietà rispetto ai costruttori e ai prototipi tradizionali. Ecco
+        le principali caratteristiche delle classi in JavaScript:
+      </p>
+      <h2><p>Definire una Classe</p></h2>
+      <h3>
+        <p>
+          Le classi in JavaScript sono definite usando la parola chiave class. Una classe può avere un costruttore,
+          metodi e getter/setter. Esempio:
+        </p>
+        <p><code>class Persona {</code></p>
+        <p><code>constructor(nome, eta) {</code></p>
+        <p><code>this.nome = nome;</code></p>
+        <p><code>this.eta = eta;</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>saluta() {</code></p>
+        <p><code>console.log("Ciao, mi chiamo ${this.nome} e ho ${this.eta} anni");</code></p>
+        <p><code>}</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>const persona1 = new Persona ("Valerio", 30);</code></p>
+        <p><code>persona1.saluta();</code> // Output: Ciao, mi chiamo Valerio e ho 30 anni</p>
+      </h3>
+      <br />
+      <h2><p>Costruttore</p></h2>
+      <h3>
+        <p>
+          Il metodo <code>constructor</code> è un metodo speciale per creare e inizializzare un oggetto creato con una
+          classe. Viene chiamato automaticamente quando si crea una nuova istanza della classe. Esempio
+        </p>
+        <p><code>class Libro {</code></p>
+        <p><code>constructor(titolo, autore) {</code></p>
+        <p><code>this.titolo = Harry Potter;</code></p>
+        <p><code>this.autore = JK Rowling;</code></p>
+        <p><code>}</code></p>
+        <p><code>}</code></p>
+      </h3>
+      <br />
+      <h2>Metodi</h2>
+      <h3>
+        <p>
+          I metodi definiti all'interno di una classe non richiedono la parola chiave <code>function</code>. Esempio:
+        </p>
+        <p><code>class Automobile {</code></p>
+        <p><code>constructor(marca, modello) {</code></p>
+        <p><code>this.marca = marca;</code></p>
+        <p><code>this.modello = modello;</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>descrizione () {</code></p>
+        <p><code>return "Automobile: ${this.marca} ${this.modello}";</code></p>
+        <p><code>}</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>const auto = new Automobile("Toyota", "Corolla");</code></p>
+        <p><code>console.log(auto.descrizione());</code> // Output: Automobile: Toyota Corolla</p>
+        <br />
+      </h3>
+      <h2><p>Ereditarietà</p></h2>
+      <h3>
+        <p>
+          L'ereditarietà viene implementata usando la parola chiave <code>extends</code>. La parola chiave
+          <code>super()</code> viene usata per chiamare il costruttore e i metodi della classe base. Esempio:
+        </p>
+        <p><code>class Animale {</code></p>
+        <p><code>constructor(nome) {</code></p>
+        <p><code>this.nome = nome;</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>faSuono() {</code></p>
+        <p><code>console.log("Suono generico");</code></p>
+        <p><code>}</code></p>
+        <p>}</p>
+        <br />
+        <p><code>class Cane extends Animale {</code></p>
+        <p><code>constructor(nome, razza) {</code></p>
+        <p><code>super(nome);</code> // Chiama il costruttore della classe base (Animale);</p>
+        <p><code>this.razza = razza;</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>faSuono() {</code></p>
+        <p><code>console.log("Suono generico");</code></p>
+        <p><code>}</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>class Cane extends Animale {</code></p>
+        <p><code>constructor(nome, razza) {</code></p>
+        <p><code>super(nome);</code> Chiama il costruttore della classe base (Animale);</p>
+        <p><code>this.razza = razza;</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>faSuono() {</code></p>
+        <p><code>console.log("Bau Bau");</code></p>
+        <p><code>}</code></p>
+        <p><code>}</code></p>
+        <br />
+        <p><code>const cane = new Cane("Fido", "Labrador");</code></p>
+        <p><code>cane.faSuono;</code> // Output: Bau Bau</p>
+        <p><code>console.log(cane.nome);</code> // Output: Fido</p>
+        <p><code>console.log(cane.razza);</code> // Output: Labrador</p>
+        <br />
+        <h2><p>Metodi Statici</p></h2>
+        <h3>
+          <p>
+            I metodi statici sono definiti utilizzando la parola chiave <code>static</code> e possono essere chiamati
+            senza creare un'istanza della classe. Esempio:
+          </p>
+          <p><code>class Matematica {</code></p>
+          <p><code>static somma(a, b) {</code></p>
+          <p><code>return a + b;</code></p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>console.log(Matematica.somma(5, 3));</code> // Output: 8</p>
+        </h3>
+        <br />
+      </h3>
+    </h3>
+    <h2>Proprietà e Metodi Privati</h2>
+    <h3>
+      <p>
+        Con l'introduzione della sintassi ECMAScript 2022, è possibile definire proprietà e metodi privati utilizzando
+        il prefisso <code>#</code>. Esempio:
+      </p>
+      <p><code>class ContoBancario {</code></p>
+      <p><code>#saldo = 0;</code></p>
+      <br />
+      <p><code>deposita(importo) {</code></p>
+      <p><code>this.#saldo += importo;</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>preleva(importo) {</code></p>
+      <p><code>if (importo <= this.#saldo -= importo;</code></p>
+      <p><code>} else {</code></p>
+      <p><code>console.log("Saldo insufficiente");</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>mostraSaldo() {</code></p>
+      <p><code>console.log("Saldo: ${this.#saldo"});</code></p>
+      <p><code>}</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>const conto = new ContoBancario();</code></p>
+      <p><code>conto.deposita(100);</code></p>
+      <p><code>conto.preleva(30);</code></p>
+      <p><code>conto.mostraSaldo();</code> // Output: Saldo: 70</p>
+    </h3>
+    <br />
+    <h2>Getters e Setters</h2>
+    <h3>
+      <p>
+        Le classi possono avere <code>getter</code> e <code>setter</code> per ottenere e impostare il valore delle
+        proprietà.
+      </p>
+      <p><code>class Persona {</code></p>
+      <p><code>constructor(nome) {</code></p>
+      <p><code>this._nome = nome;</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>get nome() {</code></p>
+      <p><code>return this._nome;</code></p>
+      <p><code>}</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>const persona = new Persona("Mario);</code></p>
+      <p><code>console.log(persona.nome);</code> // Output: Luca</p>
+      <p><code>persona.nome = "Andrea";</code></p>
+      <p><code>console.log(persona.nome);</code> // output: Andrea</p>
+    </h3>
+    <br />
+    <h2>Espressioni di Classe</h2>
+    <h3>
+      <p>Le classi possono essere definite anche come espressioni. Esempio:</p>
+      <p><code>const Rettangolo = Class {</code></p>
+      <p><code>constructor(altezza, larghezza) {</code></p>
+      <p><code>this.altezza = altezza;</code></p>
+      <p><code>this.larghezza = larghezza;</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>area () {</code></p>
+      <p><code>return this.altezza * this.larghezza;</code></p>
+      <p><code>}</code></p>
+      <p><code>}</code></p>
+      <br />
+      <p><code>const rettangolo = new Rettangolo(10, 5);</code></p>
+      <p><code>console.log(rettangolo.area());</code> // Output: 50</p>
+    </h3>
+  </body>
+</html>
