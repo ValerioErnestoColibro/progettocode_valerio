@@ -1,0 +1,76 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express in Javascript</title>
+  </head>
+  <body>
+    <h1>Express in Javascript</h1>
+    <br />
+    <h2>Definizione</h2>
+    <h3>
+      Express è un framework web per Node.js, progettato per semplificare la creazione di applicazioni web e API.
+      Fornisce un set di funzionalità robuste per lo sviluppo di server web, riducendo la complessità di scrivere codice
+      server da zero. Ecco una panoramica di Express in un contesto informatico:
+    </h3>
+    <br />
+    <h2>Caratteristiche principali di Express:</h2>
+    <h3>
+      <ul>
+        <li>
+          Minimalista e Flessibile: Express è progettato per essere leggero e minimalista, offrendo solo gli strumenti
+          di base necessari per costruire applicazioni web. Questo consente agli sviluppatori di aggiungere solo le
+          funzionalità di cui hanno bisogno tramite middleware.
+        </li>
+        <li>
+          Middleware: Una delle caratteristiche più potenti di Express è il concetto di middleware, che sono funzioni
+          che hanno accesso all'oggetto richiesta (req), all'oggetto risposta (res) e alla funzione next. I middleware
+          possono essere utilizzati per eseguire una vasta gamma di operazioni, come la gestione dell'autenticazione, la
+          manipolazione delle richieste, il logging e altro.
+        </li>
+        <li>
+          Routing: Express offre un sistema di routing flessibile e intuitivo, che permette di definire le varie rotte
+          dell'applicazione e come devono rispondere a diverse richieste HTTP (GET, POST, PUT, DELETE, ecc.).
+        </li>
+        <li>
+          Supporto per Template Engine: Express può integrarsi facilmente con diversi motori di template, come EJS, Pug
+          e Handlebars, per generare HTML dinamico da dati server-side.
+        </li>
+        <li>
+          Gestione degli Errori: Express semplifica la gestione degli errori attraverso middleware specifici per gli
+          errori, permettendo di centralizzare e standardizzare la gestione degli stessi.
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Esempio di una semplice applicazione con Express:</h2>
+    <h3>
+      <p><code>const express = require('express');</code> // Importare il modulo express</p>
+      <p><code>const app = express();</code></p>
+      <p><code>const PORT = 3000;</code></p>
+      <br />
+      <p><code>app.get('/', (req, res) => {</code> // Definire una rotta per la root ("/")</p>
+      <p><code>res.send('Ciao, mondo!');</code></p>
+      <p><code>});</code></p>
+      <br />
+      <p><code>app.listen(PORT, () => {</code> // Avviare il server</p>
+      <p><code>console.log(`Server in esecuzione su http://localhost:${PORT}`);</code></p>
+      <p><code>});</code></p>
+      <br />
+      <h1>
+        DA COMPLETARE: Uso dei Middleware in Express, Vantaggi di Express, Svantaggi di Express, Applicazioni tipiche di
+        Express
+      </h1>
+      <p><code></code></p>
+      <p><code></code></p>
+      <p><code></code></p>
+      <p><code></code></p>
+      <p><code></code></p>
+      <p><code></code></p>
+      <p><code></code></p>
+    </h3>
+  </body>
+</html>
