@@ -1,0 +1,120 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node JS</title>
+  </head>
+  <body>
+    <h1>Node.js</h1>
+    <br />
+    <h2>Definizione</h2>
+    <h3>
+      Node.js è un ambiente di runtime JavaScript open-source, costruito sul motore V8 di Chrome, che permette di
+      eseguire codice JavaScript al di fuori di un browser web. Questo rende possibile utilizzare JavaScript per lo
+      sviluppo lato server, consentendo agli sviluppatori di creare applicazioni complete utilizzando un unico
+      linguaggio di programmazione.
+    </h3>
+    <br />
+    <h2>Caratteristiche principali di Node.js:</h2>
+    <h3>
+      <ul>
+        <li>
+          Non bloccante e asincrono: Node.js utilizza un modello di I/O non bloccante e asincrono, il che significa che
+          può gestire molte operazioni contemporaneamente senza bloccare il thread principale. Questo è particolarmente
+          utile per le applicazioni che devono gestire un alto numero di connessioni simultanee, come server web.
+        </li>
+        <li>
+          Event-driven: Node.js è basato su un'architettura event-driven (guidata dagli eventi), dove il ciclo di vita
+          dell'applicazione è governato da eventi e callback. Questo approccio permette di scrivere codice che risponde
+          rapidamente agli eventi esterni, come richieste HTTP o input dell'utente.
+        </li>
+        <li>
+          Single-threaded: Node.js opera su un singolo thread di esecuzione, utilizzando il loop degli eventi per
+          gestire operazioni concorrenti. Questo semplifica la gestione del codice e riduce il rischio di condizioni di
+          gara (race conditions), anche se può richiedere attenzione nella gestione di operazioni computazionalmente
+          intensive.
+        </li>
+        <li>
+          NPM (Node Package Manager): Node.js include un gestore di pacchetti chiamato NPM, che fornisce accesso a una
+          vasta libreria di pacchetti e moduli pronti all'uso. Questo facilita l'integrazione di funzionalità aggiuntive
+          nelle applicazioni Node.js.
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Vantaggi di Node.js:</h2>
+    <h3>
+      <ul>
+        <li>
+          Performance Elevata: Grazie al motore V8 e al modello non bloccante, Node.js può gestire un elevato numero di
+          connessioni simultanee con basse latenze.
+        </li>
+        <li>
+          Condivisione del Codice: Utilizzando JavaScript sia sul client che sul server, è possibile condividere codice
+          tra i due ambienti, riducendo la duplicazione e facilitando la manutenzione.
+        </li>
+        <li>
+          Ecosistema Ricco: NPM offre accesso a milioni di pacchetti che possono accelerare lo sviluppo e aggiungere
+          funzionalità avanzate alle applicazioni.
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Svantaggi di Node.js:</h2>
+    <h3>
+      <ul>
+        <li>
+          Non Adatto per Operazioni CPU-Intensive: Poiché Node.js è single-threaded, le operazioni computazionalmente
+          intensive possono bloccare il loop degli eventi, degradando le prestazioni dell'applicazione.
+        </li>
+        <li>
+          Callback Hell: La gestione di molte operazioni asincrone può portare a una struttura del codice complessa e
+          difficile da mantenere, nota come "callback hell". Tuttavia, questo problema può essere mitigato utilizzando
+          Promises e la sintassi <code>async/await</code>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Esempio di applicazione di Node.js:</h2>
+    <h3>
+      <p><code>const http = require('http');</code> // Importare il modulo HTTP</p>
+      <p>
+        <code>const server = http.createServer((req, res) => {</code> // Creare un server che risponde a tutte le
+        richieste con "Hello, World!"
+      </p>
+      <p><code>res.statusCode = 200;</code></p>
+      <p><code>res.setHeader('Content-Type', 'text/plain');</code></p>
+      <p><code>res.end('Hello, World!\n');</code></p>
+      <p><code>});</code></p>
+      <br />
+      <p><code>const PORT = 3000;</code> // Il server ascolta sulla porta 3000</p>
+      <p><code>server.listen(PORT, () => {</code></p>
+      <p><code>console.log(`Server in esecuzione su http://localhost:${PORT}/`);</code></p>
+      <p><code>});</code></p>
+    </h3>
+    <br />
+    <h2>Utilizzi comuni di Node.js:</h2>
+    <h3>
+      <ul>
+        <li>
+          Server Web: Node.js è comunemente utilizzato per creare server web, grazie alla sua capacità di gestire molte
+          connessioni simultanee.
+        </li>
+        <li>
+          API RESTful: La creazione di API RESTful è un altro uso comune, facilitato da framework come Express.js.
+        </li>
+        <li>
+          Applicazioni in Tempo Reale: Applicazioni che richiedono aggiornamenti in tempo reale, come chat, giochi
+          online e strumenti di collaborazione, traggono grande vantaggio dalle capacità di Node.js.
+        </li>
+        <li>
+          Microservizi: Node.js è spesso utilizzato per sviluppare microservizi grazie alla sua leggerezza e facilità di
+          scalabilità.
+        </li>
+      </ul>
+    </h3>
+  </body>
+</html>
