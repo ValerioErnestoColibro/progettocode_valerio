@@ -1,0 +1,4 @@
+p {
+  color: blue; /* Colore di default del testo */
+  cursor: pointer; /* Cambia il cursore al passaggio sopra il paragrafo */
+}
