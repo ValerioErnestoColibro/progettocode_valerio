@@ -6,7 +6,7 @@
     <title>Javascript - Midali</title>
   </head>
   <body>
-    <h1 style="text-align: center">Javascript in 6 ore</h1>
+    <h1 style="text-align: center">Javascript in 6 ore - Edoardo Midali</h1>
     <h2>Introduzione a JS</h2>
     <h3>
       <ul>
@@ -30,7 +30,10 @@
           parzialmente da noi. La maggior parte viene calcolato in un computer
           esterno (Java, Python);
         </li>
-        <li>Internamente si può implementare JS col tag 'script';</li>
+        <li>
+          Internamente ad HTML, si può implementare JS col tag
+          <code>script</code>;
+        </li>
       </ul>
     </h3>
     <br />
@@ -59,7 +62,34 @@
         <li>
           Si può sia usare <code>var</code> che <code>let</code> per manipolare
           le variabili. E' comunque più usato <code>let</code> rispetto a
-          <code>var</code> QUESTO PER LE VARIABILI RIASSEGNABILI;
+          <code>var</code> (QUESTO VALE PER LE VARIABILI RIASSEGNABILI);
+        </li>
+        <li>
+          Perchè usare <code>let</code> piuttosto che <code>var</code>?
+          <ul>
+            <li>
+              <code>var</code> ha ambito di funzione, quindi la variabile sarà
+              disponibile in tutto il blocco; <code>let</code> ha ambito di
+              blocco, quindi le sue funzioni sono limitate al blocco in cui
+              vengono dichiarate;
+            </li>
+            <li>
+              <code>var</code> si usa per variabili da "hoistare"(sollevare)
+              all'inizio del loro contesto di esecuzione. Tuttavia, il valore
+              assegnato non è sollevato mentre la dichiarazione sì;
+              <code>let</code> solleva le variabili ma non le inizializza;
+            </li>
+            <li>
+              <code>var</code> permette la riedeclarazione della stessa
+              variabile nello stesso ambito senza errori; <code>let</code> non
+              permette la riedeclarazione della stessa variabile nello stesso
+              ambito e provoca un errore <code>SyntaxError</code>;
+            </li>
+            <li>
+              <code>var</code> può creare accidentalmente una variabile globale;
+              <code>let</code> non lo fa;
+            </li>
+          </ul>
         </li>
         <li>
           Si può usare anche <code>const nome = "Mario"</code> per dichiarare
@@ -127,7 +157,7 @@
         </li>
         <li>
           Le costanti sono valori che non devono cambiare nel tempo come
-          l'indirizzo del database e simili. Esempio:
+          l'indirizzo del database e simili.
         </li>
       </ul>
     </h3>
@@ -453,12 +483,803 @@
       </ul>
     </h3>
     <br />
-    <h2></h2>
+    <h2>Il ciclo "For"</h2>
     <h3>
       <ul>
-        <li>Riparti da 1:50:37</li>
+        <li>
+          Esempio: "Devo leggere un libro. Ho già letto questo libro? Se sì,
+          passo al prossimo libro; se no, lo leggo fino a finirlo"
+        </li>
+        <li>
+          <p><code>script</code></p>
+          <p><code>let array1 = [1, 2, 3, 4, 5];</code></p>
+          <br />
+          <p><code>for (let i=0; i <= array1.length; i++){</code></p>
+          <p><code>console.log(array1[i]);</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>
+          Facciamo invece un esempio: "Al primo numero pari, ti fermi"
+          <p><code>script</code></p>
+          <p><code>let array1 = [1, 2, 3, 4, 5];</code></p>
+          <br />
+          <p><code>for (let i=0; i <= array1.length; i++){</code></p>
+          <p><code>console.log(array1[i]);</code></p>
+          <p><code>if (array1[i] == 2) {</code></p>
+          <p><code>break;</code></p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>
+          Se invece vogliamo saltare un certo elemento ("tutti i numeri pari"),
+          basta fare:
+          <p><code>script</code></p>
+          <p><code>let array1 = [1, 2, 3, 4, 5];</code></p>
+          <br />
+          <p><code>for (let i=0; i <= array1.length; i++){</code></p>
+          <p><code>if (array1[i] % 2 == 0) {</code></p>
+          <p><code>continue;</code></p>
+          <p><code>}</code></p>
+          <p><code>console.log(array1[i]);</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
       </ul>
     </h3>
+    <br />
+    <h2>Ciclo "While" e "Do While"</h2>
+    <h3>
+      <ul>
+        <li>
+          <p><code>script</code></p>
+          <p><code>let array1 = [1, 2, 3, 4, 5];</code></p>
+          <br />
+          <p><code>let i = 0;</code></p>
+          <p><code>while(i < array1.length){</code></p>
+          <p><code>console.log(array1[i]);</code></p>
+          <p><code>i++</code></p>
+          <p><code>}</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>
+          Invece per fare il "Do While", facciamo:
+          <p><code>script</code></p>
+          <p><code>let array1 = [1, 2, 3, 4, 5];</code></p>
+          <br />
+          <p><code>let i = 0;</code></p>
+          <p><code>while(i < array1.length){</code></p>
+          <p><code>console.log("while: ", array1[i]);</code></p>
+          <p><code>i++</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>let k = 0;</code></p>
+          <p><code>do{</code></p>
+          <p><code>console.log("do while: ", array1[k]);</code></p>
+          <p><code>k++</code></p>
+          <p><code>}while(k < array1.length)</code></p>
+          <p><code>script</code></p>
+        </li>
+        <li>
+          Il "Do While" esegue il codice PRIMA di verificare la condizione, il
+          "While" lo fa DOPO la verifica della condizione;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Cosa sono le funzioni?</h2>
+    <h3>
+      <ul>
+        <li>
+          Una funzione è un insieme di azioni da far fare al programma ogni
+          volta che gli comandiamo qualcosa;
+        </li>
+        <li>
+          Esempio banale:
+          <p><code>function cucinarePasta(){</code></p>
+          <p><code>usarePentola</code></p>
+          <p><code>mettereAcqua</code></p>
+          <p><code>fareBollire</code></p>
+          <p><code>calarePasta</code></p>
+          <p><code>aspettare</code></p>
+          <p><code>buttarePasta</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          Un esempio di funzioni lo abbiamo già visto con "string.replace",
+          "array.join", "math.random";
+        </li>
+        <li>
+          Qual è la differenza tra funzioni e metodi? I metodi sono funzioni di
+          oggetti, le funzioni al di fuori di oggetti sono banali funzioni. La
+          differenza sta nel dove si trovano;
+        </li>
+        <li>
+          Per richiamare una funzione, prima dichiariamola:
+          <p><code>function saluto(){</code></p>
+          <p><code>console.log("Ciao");</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            Scrivere poi nella console <code>saluto();</code> Come output:
+            "Ciao"
+          </p>
+          <p><code></code></p>
+        </li>
+        <li>
+          Cosa sono le funzioni anonime? Sono funzioni non definite da un nome;
+        </li>
+        <li>
+          Come esempio, immaginiamo di avere un bottone:
+          <p><code>button Clicca Qua! /button</code></p>
+          <br />
+          <p><code>const myButton = document.querySelector("button");</code></p>
+          <br />
+          <p><code>myButton.onclick = function () {</code></p>
+          <p><code>alert("Benvenuto!");</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          Si può anche associare ad una variabile, ma questo equivale a dare un
+          nome:
+          <p><code>button Clicca Qua! /button</code></p>
+          <br />
+          <p><code>const myButton = document.querySelector("button");</code></p>
+          <br />
+          <p><code>let variabile = function () {</code></p>
+          <p><code>alert("Benvenuto!");</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            Poi sulla console <code> variabile();</code> avremo come output
+            l'alert "Benvenuto!"
+          </p>
+        </li>
+        <li>
+          Cosa è lo "Scope"? E' lo scopo delle variabili dentro e fuori dalle
+          funzioni. Può esserci:
+          <ul>
+            <li>
+              Uno scope globale (che riguarda la variabile esterna alla
+              funzione);
+            </li>
+            <li>
+              Uno scope locale (che riguarda la variabile interna alla
+              funzione);
+            </li>
+          </ul>
+        </li>
+        <li>
+          Per esempio, se qui abbiamo una variabile globale:
+          <p><code>script</code></p>
+          <p><code>let nome = "Luca";</code></p>
+          <br />
+          <p><code>function saluto(){</code></p>
+          <p><code>console.log("Ciao: ", nome);</code></p>
+          <p><code>}</code></p>
+          <p><code>ciao();</code></p>
+          <p><code>/script</code></p>
+        </li>
+        <li>
+          Dentro le funzioni ci sono i parametri tra parentesi tonde. Per
+          richiamare le funzioni in base ai parametri, basta fare:
+          <p><code>script</code></p>
+          <p><code>function saluto(name){</code></p>
+          <p><code>console.log("Ciao: ", name);</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            <code>saluto("Marco")</code> e avremo come output "Ciao: Marco";
+          </p>
+          <p><code>/script</code></p>
+        </li>
+        <li>
+          La cosa bella di questo processo è il passarsi i parametri tra le
+          varie funzioni, passando dal globale al locale;
+        </li>
+        <li>
+          Esempio per innestare una funzione:
+          <p><code>script</code></p>
+          <p><code>let nome = "Luca";</code></p>
+          <br />
+          <p><code>function ciao(){</code></p>
+          <p><code>let cognome = "Rossi";</code></p>
+          <p><code>console.log("Ciao: ", cognome);</code></p>
+          <p><code>hello(cognome);</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            Da qui, dedichiamoci ad inizializzare la funzione "Hello"
+            <code>function hello(surname){</code>
+          </p>
+          <p><code>console.log("Hello: ", surname);</code></p>
+          <p><code>}</code></p>
+          <p><code></code></p>
+          <p>
+            <br />
+            <code>ciao();</code> e avremo come output "Ciao: Rossi" ed "Hello:
+            Rossi"
+          </p>
+          <p><code>/script</code></p>
+        </li>
+        <li>
+          Questo può essere utile per generare tabelle senza HTML, ma lo vedremo
+          in seguito;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Come creare delle funzioni</h2>
+    <h3>
+      <ul>
+        <li>
+          Immaginiamo di avere un bottone e una scritta sotto:
+          <p><code>button clicca qui! /button</code></p>
+          <p><code>h1 Testo del saluto /h1</code></p>
+        </li>
+        <li>
+          Dopodichè:
+          <p><code>script</code></p>
+          <p><code>let button = document.querySelector("button");</code></p>
+          <p><code>let title = document.querySelector("h1");</code></p>
+          <br />
+          <p><code>function saluta(){</code></p>
+          <p>
+            <code>title.innerHTML = "Ciao utente!";</code> qui stiamo dicendo di
+            cambiare il testo di h1
+          </p>
+          <p><code>}</code></p>
+
+          <br />
+          <p><code>button.addEventListener("click", ()=>{</code></p>
+          <p><code>saluta();</code></p>
+          <p><code>})</code></p>
+          <p>
+            <code>/script</code> Come output avremo il cambio del testo da
+            "Testo del Saluto" a "Ciao utente!"
+          </p>
+        </li>
+        <li>
+          Se io invece voglio aggiungere un parametr (in questo caso un input)
+          fuori dallo script, sopra il button di HTML:
+          <p>
+            <code
+              >(apertura)input type="text" name="nome" placeholder="nome
+              persona"(chiusura)</code
+            >
+          </p>
+        </li>
+
+        <li>
+          Poi per inserire l'input nello script, bisogna metterlo dopo "let
+          button" e "let title":
+          <p><code>let nome = document.querySelector("input");</code></p>
+          <p>Poi da mettere dopo "saluta()"</p>
+          <p><code>console.log(nome.value);</code></p>
+        </li>
+        <li>
+          Adesso inseriamo un parametro nella funzione "saluta()":
+          <p><code>function saluta(name){</code></p>
+          <p>
+            <code>title.innerHTML = `Ciao ${name}`;</code> QUI SI USANO I
+            BACKTICK!
+          </p>
+          <p><code>}</code></p>
+          <p>
+            Questo ci darà come output "Ciao undefined" poichè il parametro
+            "name" della funzione "saluta" non è definito;
+          </p>
+        </li>
+        <li>
+          Nel caso in cui ci si dimentica un parametro o non lo si mette di
+          proposito, si può definire usando un parametro di default:
+          <p><code>function saluta(name = "utente sconosciuto");</code></p>
+          <p>Cliccando sul bottone, avremo "Ciao utente sconosciuto"</p>
+        </li>
+        <li>
+          Infine, per visualizzare il nostro nome dopo averlo digitato nella
+          barra di ricerca, basta fare:
+          <p>Questo sotto "button.addEventListener("click", ()=>"</p>
+          <p><code>saluta(nome.value);</code></p>
+          <p>
+            Se digitiamo il nome "Valerio", avremo come output "Ciao Valerio"
+          </p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Il return delle funzioni</h2>
+    <h3>
+      <ul>
+        <li>
+          Per far sì che alcuni valori siano rimandati a schermo, usiamo il
+          "return". Si fa una cosa con una funzione, questa esegue il calcolo e
+          offre il risultato, ma a noi serve anche ritornare un valore per
+          magari manipolarlo o mandarlo a schermo;
+        </li>
+        <li>
+          Esempio in un documento HTML:
+          <p>
+            <code
+              >input type="text" name="numero" placeholder="inserisci un
+              numero"/</code
+            >
+          </p>
+          <p><code>button Calcola cubo /button</code></p>
+          <p><code>h1 Risultato /h1</code></p>
+          <br />
+          <p><code></code></p>
+          <p><code>script</code></p>
+          <p><code>let button = document.querySelector("button");</code></p>
+          <p><code>let title = document.querySelector('h1');</code></p>
+          <p><code>let numero = document.querySelector("input");</code></p>
+          <br />
+          <p><code>function cubo(number){</code></p>
+          <p><code>let result = number * number * number;</code></p>
+          <p><code>console.log(result);</code></p>
+          <p><code>return result</code> Questo chiude la funzione</p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>button.addEventListener("click", ()=>{</code></p>
+          <p><code>cubo(numero.value);</code></p>
+          <p><code>title.innerHTML = cubo(numero.value);</code></p>
+          <p><code>});</code></p>
+          <p><code>/script</code></p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Introduzione agli eventi</h2>
+    <h3>
+      <ul>
+        <li>
+          Gli eventi sono i fenomeni che accadono in tempo reale in una pagina
+          web, il tutto in reazione ad un'azione dell'utente;
+        </li>
+        <li>
+          Un esempio semplice di menu è:
+          <p><code>nome.onfocus(){</code> Nome dell'elemento + event handler</p>
+          <p><code>console.log("Ciao");</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          Si può fare anche "inline" cioè dentro un tag:
+          <p><code>input id="fname" type="text" onfocus="saluta();"</code></p>
+          <p>Poi, dentro lo script:</p>
+          <p><code>function saluta(){</code></p>
+          <p><code>console.log("Ciao utente");</code></p>
+          <p><code>}</code> E sulla console avremo "Ciao Luca"</p>
+        </li>
+        <li>
+          Questo metodo è tuttavia sconsigliato per evitare di intaccare il
+          codice HTML con del codice Javascript;
+        </li>
+        <li>
+          Un altro modo per innescare un evento è "addEventListener":
+          <p>Dentro lo script:</p>
+          <p><code>nome.addEventListener("focus", ()=>{</code></p>
+          <p><code>console.log("sono in focus");</code></p>
+          <p><code>})</code></p>
+        </li>
+        <li>
+          Quando si verifica un evento, si genera anche un oggetto evento. Tale
+          oggetto lo possiamo nominare "event" o semplicemente "e":
+          <p><code>nome.addEventListener("focus", function (e){</code></p>
+          <p>
+            <code>console.log(e.target);</code> Questo ci permetterà di
+            visualizzare alcune parti dell'oggetto evento
+          </p>
+          <p><code>})</code></p>
+        </li>
+        <li>
+          Ci sono degli eventi che si comportano in un certo modo, è il caso di
+          "e.preventDefault();" che ci permette di evitare lo stallo di
+          un'azione;
+        </li>
+        <li>
+          Altri tipi di eventi sono "Event Bubbling" e "Capture" che ci
+          permettono di nascondere gli elementi cliccati mettendo la classe
+          "Hidden";
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Introduzione agli oggetti</h2>
+    <h3>
+      <ul>
+        <li>
+          Un oggetto è uno schedario di dati in relazione tra loro. Esempio:
+          <p><code>script</code></p>
+          <p><code>const persona = {</code> "persona" è l'oggetto</p>
+          <p>
+            <code>nome: "Valerio",</code> in questo caso "nome" è la chiave,
+            "Valerio" è il valore;
+          </p>
+          <p><code>cognome: "Colibro",</code></p>
+          <p><code>eta: 30,</code></p>
+          <p><code>genere: "Maschio",</code></p>
+          <p><code>citta: "Palermo",</code></p>
+          <p><code>interessi: ["musica", "coding", "allenamento"]</code></p>
+          <p><code>indirizzo e cap: {</code></p>
+          <p><code>via: "Inventata 123",</code></p>
+          <p><code>cap: "123456,"</code></p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+          <p><code>saluta: function(){</code></p>
+          <p>
+            <code>console.log(`Ciao sono ${persona.nome}`)</code> QUI SI USANO I
+            BACKTICK!
+          </p>
+          <p><code>}</code></p>
+          <p>
+            <code>console.log(persona.nome);</code> Così stiamo accedendo alla
+            proprietà dell'oggetto "persona"
+          </p>
+          <p>
+            Se invece vogliamo accedere ad un elenco di dati, basta fare
+            <code>console.log(persona.interessi[2]);</code> e avremo
+            "allenamento"
+          </p>
+          <p>
+            Se invece vogliamo accedere ad una sottoproprietà, basta fare
+            <code>console.log(persona.indirizzo.via);</code>
+          </p>
+          <p>
+            Infine, per mandare a schermo una funzione, si fa
+            <code>persona.saluta();</code>
+          </p>
+          <p><code>/script</code></p>
+        </li>
+        <li>
+          Un oggetto ha delle proprietà (ossia ogni chiave dell'oggetto) e dei
+          metodi (ogni funzione dell'oggetto);
+        </li>
+        <li>
+          Nel precedente esempio, "nome:" è una proprietà, "saluta: function" è
+          un metodo;
+        </li>
+        <li>
+          Cosa è la Dot Notation? E' l'accesso attraverso il segno di
+          punteggiatura <code>console.log(persona.nome)</code>
+          mentre la Bracket Notation è l'accesso attraverso le parentesi quadre
+          <code>console.log(persona["nome"])</code>
+          ;
+        </li>
+        <li>
+          Quando si usa una piuttosto che l'altra? Per prendere un dato senza
+          dinamicità, si sceglie la Dot Notation; invece per prendere un dato
+          dinamicamente si usa la Bracket Notation;
+        </li>
+        <li>
+          Ma come si aggiorna un oggetto? Esempio:
+          <code>persona.nome = "Ernesto";</code> oppure se abbiamo da modificare
+          un elemento specifico:
+          <code>persona.interessi[2] = "cazzeggiare";</code>
+        </li>
+        <li>
+          Perchè si usa la parola "this"? Invece di fare
+          <code>console.log("Ciao sono ${persona.nome}");</code> si può fare
+          <code>console.log("Ciao sono ${this.nome}");</code> e avremo lo stesso
+          risultato nella console;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>
+      La programmazione a oggetti (OOP) - Parte della spiegazione presa da
+      ChatGPT perchè Midali qui spiega male
+    </h2>
+    <h3>
+      <ul>
+        <li>
+          E' un paradigma di programmazione che utilizza "oggetti" per
+          rappresentare dati e metodi associati ad essi. Gli oggetti sono
+          istanze di "classi", che fungono da modello per creare oggetti. Questo
+          approccio consente di modellare concetti complessi in modo più
+          intuitivo e strutturato, favorendo la riusabilità e la manutenibilità
+          del codice.
+        </li>
+        <li>
+          Ecco alcuni concetti fondamentali della OOP:
+
+          <ul>
+            <li>
+              Classe: Un modello o blueprint che definisce le proprietà
+              (attributi) e i comportamenti (metodi) che gli oggetti della
+              classe possono avere.
+            </li>
+            <li>
+              Oggetto: Un'istanza di una classe fatta attraverso un costruttore.
+              Ogni oggetto può avere valori diversi per le proprietà definite
+              nella classe.
+            </li>
+            <li>
+              Incapsulamento: La pratica di nascondere i dettagli interni di un
+              oggetto e permettere l'accesso solo tramite metodi pubblici.
+              Questo aiuta a proteggere i dati e a mantenere l'integrità degli
+              oggetti.
+            </li>
+            <li>
+              Ereditarietà: Un meccanismo che permette a una classe di derivare
+              da un'altra classe, ereditando i suoi attributi e metodi. Questo
+              promuove il riuso del codice e la creazione di gerarchie di
+              classi.
+            </li>
+            <li>
+              Polimorfismo: La capacità di diverse classi di essere trattate
+              attraverso la stessa interfaccia. Significa che lo stesso metodo
+              può comportarsi in modi diversi a seconda dell'oggetto che lo
+              invoca.
+            </li>
+            <li>
+              Astrazione: Il processo di semplificazione di un sistema complesso
+              mediante la modellazione delle sue caratteristiche essenziali,
+              nascondendo i dettagli irrilevanti per l'uso corrente.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Per fare un esempio di "Object Template" con costruttori e istanze,
+          facciamo un esempio usando una classe "box":
+          <p><code>class Box {</code></p>
+          <p>
+            <code>constructor (length = 0, width = 0, height = 0) {</code> //
+            Costruttore senza parametri
+          </p>
+          <p><code>this.length: length;</code></p>
+          <p><code>this.width: width;</code></p>
+          <p><code>this.height: height;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>getVolume() {</code>// Metodo per calcolare il volume</p>
+          <p><code>return this.length * this.width * this.height;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            <code>setLenght(length) {</code> // Metodi per impostare le
+            dimensioni
+          </p>
+          <p><code>this.length = length;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>setWidth(width) {</code></p>
+          <p><code>this.width = width;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>setHeight(height) {</code></p>
+          <p><code>this.height = height;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>getLength() {</code> // Metodi per ottenere le dimensioni</p>
+          <p><code>return this.length;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>getWidth() {</code></p>
+          <p><code>return this.width;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>getHeight() {</code></p>
+          <p><code>return this.height;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            <code>let intBox1 = new Box();</code> // Creazione di istanze usando
+            il costruttore senza parametri
+          </p>
+          <p><code>let doubleBox1 = new Box();</code></p>
+          <br />
+          <p>
+            <code>let inBox2 = new Box(3, 4, 5);</code> // Creazione di istanze
+            usando il costruttore con parametri
+          </p>
+          <p><code>let doubleBox2 = new Box (2.5, 3.5, 4.5);</code></p>
+          <br />
+          <p>
+            <code>console.log("Volume di intBox1:", intBox1.getVolume());</code>
+            // Stampa dei volumi
+          </p>
+          <p>
+            <code
+              >console.log("Volume di doubleBox1:",
+              doubleBox1.getVolume());</code
+            >
+          </p>
+          <p>
+            <code>console.log("Volume di intBox2:", intBox2.getvolume());</code>
+          </p>
+          <p>
+            <code
+              >console.log("Volume di doubleBox2:",
+              doubleBox2.getVolume());</code
+            >
+          </p>
+          <br />
+          <p>
+            <code>intBox1.setLength(1);</code> // Modifica delle dimensioni
+            usando i metodi set
+          </p>
+          <p><code>intBox1.setWidth(2);</code></p>
+          <p><code>intBox1.setHeight(3);</code></p>
+          <p>
+            <code
+              >console.log("Nuovo volume di intBox1:",
+              intBox1.getVolume());</code
+            >
+          </p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Ereditarietà</h2>
+    <h3>
+      <ul>
+        <li>
+          Riprendendo i precedenti esempi, dal profilo di una persona X vogliamo
+          creare il profilo "Insegnante". Per agganciare i parametri di
+          "Persona" ad "Insegnante", bisogna fare:
+          <p>
+            <code
+              >function Insegnante(nome, cognome, eta, generi, interessi,
+              materia) {</code
+            >
+          </p>
+          <p>
+            <code
+              >Persona.call(this, nome, cognome, eta, generi, interessi);</code
+            >
+          </p>
+          <p>
+            Per poi assegnare parametri specifici della categoria "Insegnante":
+          </p>
+          <p><code>this.materia = materia;</code></p>
+          <p><code>this.saluta = function () {</code></p>
+          <p>
+            <code
+              >console.log(`Buongiorno sono ${this.nome} ${this.cognome}`);
+            </code>
+          </p>
+          <p><code>};</code></p>
+          <p><code>};</code></p>
+          <br />
+          <p>
+            <code
+              >const Insegnante = new Insegnante("Anna", "Rossi", 32, "Femmina",
+              ["Netflix"], "Storia");</code
+            >
+          </p>
+          <p><code>console.log(insegnante);</code></p>
+          <p><code>insegnante.saluta();</code></p>
+        </li>
+        <li>
+          Questo esempio spiega l'ereditarietà dei parametri delle classi;
+        </li>
+        <li>
+          Nel 2015 le classi sono state introdotte per avvicinare Javascript a
+          linguaggi di programmazione come Java e C++;
+        </li>
+        <li>
+          Per fare un altro esempio riguardo l'ereditarietà delle classi in
+          Javascript, si può usare un metodo più veloce:
+          <p><code>class Insegnante extends Persona() {</code></p>
+          <p>
+            <code
+              >constructor (nome, cognome, eta, generi, interessi, materia)
+              {</code
+            >
+          </p>
+          <p><code>super (nome, cognome, eta, genere, interessi);</code></p>
+        </li>
+        <li>
+          E cosa sono i Getters e i Setters? Sono proprietà che ci ritornano
+          degli elementi, vanno sempre usati in coppia. Esempio:
+          <p><code>get materia() {</code></p>
+          <p><code>return._materia = nuovaMateria;</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>set materia(nuovaMateria) {</code></p>
+          <p><code>this._materia = nuovaMateria;</code></p>
+          <p><code>}</code></p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Lavorare con JSON</h2>
+    <h3>
+      <ul>
+        <li>
+          JSON sta per "Javascript Object Notation", è uno standard basato sul
+          testo (anche il formato è text), dunque crea delle stringhe (ragion
+          per cui si usano gli apici ""), e rappresenta una struttura di dati
+          basati sulla sintassi degli oggetti in Javascript;
+        </li>
+        <li>
+          In parole più facili, JSON è un modo più semplice rispetto a
+          Javascript per passare i dati
+        </li>
+        <li>
+          In un documento <code>"classe.json"</code> che creiamo a parte,
+          mettiamo:
+          <p><code></code></p>
+          <p><code>"nome": "4A",</code></p>
+          <p><code>"scuola": "Scuola Elementare Alessandro Manzoni",</code></p>
+          <p><code>"insegnanti": [</code></p>
+          <p><code>{</code></p>
+          <p><code>"nome": "Anna",</code></p>
+          <p><code>"cognome": "Rossi",</code></p>
+          <p>
+            <code>"materieInsegnate": ["Storia", "Italiano", "Geografia"]</code>
+          </p>
+          <p><code>},</code></p>
+          <p><code>{</code></p>
+          <p><code>"nome": "Ludovica",</code></p>
+          <p><code>"cognome": "Bianchi",</code></p>
+          <p><code>"materieInsegnate": ["Matematica", "Geometria"]</code></p>
+          <p><code>}</code></p>
+          <p><code>]</code></p>
+          <p><code>"alunni": [</code></p>
+          <p><code>{</code></p>
+          <p><code>"nome": "Aldo",</code></p>
+          <p><code>"cognome": "Baglio",</code></p>
+          <p><code>},</code></p>
+          <p><code>{</code></p>
+          <p><code>"nome": "Giovanni",</code></p>
+          <p><code>"cognome": "Storti",</code></p>
+          <p><code>},</code></p>
+          <p><code>{</code></p>
+          <p><code>"nome": "Giacomo",</code></p>
+          <p><code>"cognome": "Poretti",</code></p>
+          <p><code>}</code></p>
+          <p><code>]</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          E se io ho varie classi di scuola? Basta fare un documento chiamato
+          "classi.json" e si inizia il documento con un array (quindi con le
+          parentesi quadrate) e non con le graffe perchè è un elenco di dati;
+        </li>
+        <li>
+          Rispetto agli oggetti in Javascript che avevano sia proprietà che
+          metodi, su JSON abbiamo solo proprietà e non metodi;
+        </li>
+        <li>
+          In JSON poi si usano le doppie virgolette "" e non le virgolette
+          singole '' ;
+        </li>
+        <li>
+          Quali dati può contenere JSON? Tutti i tipi di dati: array, oggetti,
+          stringhe, numeri, booleani, ecc.
+        </li>
+        <li>
+          Come ottenere un JSON da mettere poi su Javascript? Andando dal file
+          esterno, si importa e si lavora lì. Esempio:
+          <p><code>script</code></p>
+          <p>
+            <code>let requestURL = "./classe.json";</code> Mettiamo "./" perchè
+            il file JSON è sullo stesso livello del file JS;
+          </p>
+          <p><code>let request = new XMLHttpRequest();</code></p>
+          <p><code>request.open("GET", requestURL);</code></p>
+          <p><code>request.responseType = "json";</code></p>
+          <p><code>request.send();</code></p>
+          <br />
+          <p><code>request.onload = function () {</code></p>
+          <p><code>const classe = request.response;</code></p>
+          <p><code>console.log(classe);</code></p>
+          <p><code>}</code></p>
+          <p><code>/script</code></p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Concetti generali async</h2>
+    <h3>
+      <ul>
+        <li>Ripassa da "Cosa sono le funzioni?"</li>
+        <li>Ricomincia da 4:16:00</li>
+      </ul>
+    </h3>
+    <br />
     <h2>
       <a href="https://www.youtube.com/watch?v=vL5ldIUqnb0">Fonte originale</a>
     </h2>
