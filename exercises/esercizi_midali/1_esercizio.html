@@ -1,0 +1,57 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercizio 1</title>
+  </head>
+  <body>
+    <script>
+      const oggi = new Date();
+      console.log(oggi);
+    </script>
+  </body>
+</html>
+-COSI' ABBIAMO LA DATA IN FORMATO "Sun Jun 09 2024 16:11:27"
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const oggi = new Date();
+      const options = [
+        {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          weekday: "long",
+        },
+        {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+        }
+      ];
+      console.log(oggi.toLocaleString(undefined, options[0]));
+    </script>
+  </body>
+</html>
+-COSI' ABBIAMO LA DATA IN FORMATO domenica 09/06/2024. 
+-SE POI METTI "short" PER WEEKDAY, AVRAI IL FORMATO dom 09/06/2024. 
+-ANCORA, PER MANDARE A SCHERMO SOLO L'ORARIO, BASTA METTERE IL NUMERO 1 TRA PARENTESI QUADRE IN options[1]. 
+-ANCORA, PER IL FORMATO INGLESE (AM, PM) BASTA METTERE "hour12: true" SOTTO "second: "2-digit""
+-INFINE PER AVERE DATA E ORARIO INSIEME, BASTA METTERE LE OPZIONI DI DATA E ORARIO TRA LE STESSE PARENTESI GRAFFE
+-SE INVECE VUOI METTERE LA DATA IN FORMATO H2, BASTA METTERE SOTTO IL console.log(oggi.toLocaleString(undefined, options[2]))
+options.forEach(option => {
+const element = document.createElement("h2");
+const dataformattata = oggi.toLocaleString(undefined, option)
+const text = document.createTextNode(dataformattata) ;
+element.appenChild(text)
+document.querySelector("body").appendChild(element)
+});
+-->

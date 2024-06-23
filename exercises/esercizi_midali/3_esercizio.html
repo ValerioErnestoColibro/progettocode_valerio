@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esercizio 3</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+      const numeroElementi = 3; //Serve per stabilire quanti elementi casuali ci sono nell'array//
+      const max = 10; //I valori dell'array compresi tra 0 e 10//
+      for (let i = 0; i <= numeroElementi; i++) {
+        //Il ciclo for serve per stabilire le condizioni//
+        array.push(Math.floor(Math.random() * max)); //Pushiamo questi valori nell'array, arrotondando con "Math.floor", generando valori casuali con "Math.random" e moltiplicando tutto per il valore di "max"//
+      }
+      console.log(array); //Visualizza il risultato sulla console//
+
+      let somma = 0;
+      array.forEach((numero) => {
+        //
+        somma += numero;
+      });
+      console.log(`La somma dell'array è ${somma}`); //QUI SI USANO I BACKTICK!//
+    </script>
+  </body>
+</html>
