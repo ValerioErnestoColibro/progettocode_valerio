@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Lezione 27/06</h1>
+    <h3>
+      <ul>
+        <li>
+          Prima di cominciare a fare codice, bisogna fare una fase di
+          progettazione;
+        </li>
+        <li>
+          Nel progetto, usiamo gli oggetti poichè possiamo metterci vari tipi di
+          dati/chiave
+        </li>
+        <li>
+          Immaginando uno schema a tabella, ogni colonna rappresenta un oggetto
+          (da tramutare in un array di oggetti);
+        </li>
+        <li>
+          RICORDA: ogni tabella è collegata (per via del recupero di
+          informazioni) alle altre tramite l'ID;
+        </li>
+        <li>
+          Spesso, nel fare queste operazioni, si usano i metodi degli array;
+        </li>
+        <li>
+          Il token è l'ID e fa parte dell'auth, ci permette di fare le
+          operazioni nel sito/app;
+        </li>
+        <li>Il token si cancella al logout, e si riassegna al login;</li>
+        <li>Tramite la lista dei token, capiamo chi è collegato e chi no;</li>
+        <li>
+          RICORDA: il token ha anche una scadenza temporale e più utilizzi lo
+          stesso token, più è esposto a furti;
+        </li>
+        <li>
+          Ecco perchè si elimina al logout e si rigenera un nuovo token al
+          login;
+        </li>
+        <li>
+          ALTRO METODO: si può assegnare un secondo ID (Refresh Token) per
+          agevolare il login in caso di furto o scadenza del primo token;
+        </li>
+        <li>
+          Se il token classico e il "refresh token" non sono funzionanti, si
+          reimposta la password e l'email;
+        </li>
+        <li>
+          Passando al codice, usiamo una classe javascript con liste come
+          proprietà e i metodi (ossia le funzioni del sito/app);
+        </li>
+        <li>
+          Perchè usiamo la classe? Perchè ci permettono di usare le 4
+          caratteristiche dell'OOP;
+        </li>
+        <li>
+          E' utile, nel caso di un'eventuale app, creare due tipi di classi:
+          <ul>
+            <li>Una classe "Model" per gestire le funzioni globali;</li>
+            <li>Una classe "Controller" gestisce le singole entità;</li>
+          </ul>
+        </li>
+        <li>
+          IMPORTANTE: inizia <u>SEMPRE</u> dalla Business Logic (la
+          schematizzazione senza codice) e poi si passa alla UI (uso del
+          codice);
+        </li>
+        <li>
+          Scalabilità = soluzione che va a risparmiare più energie di calcolo;
+        </li>
+      </ul>
+    </h3>
+  </body>
+</html>
