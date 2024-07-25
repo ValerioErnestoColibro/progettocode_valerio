@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezione 4/07</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Lezione 4/07</h1>
+    <h3>
+      <ul>
+        <li>
+          Le chiamate API (Application Programming Interface) permettono ad un
+          client di parlare con un server;
+        </li>
+        <li>Il server espone diverse API attraverso le quali comunica;</li>
+        <li>Le API sono gli indirizzi che io digito;</li>
+        <li>
+          I metodi delle API sono questi:
+          <ul>
+            <li>Get: chiamata di base a cui succede una pagina HTML;</li>
+            <li>
+              Post: per rispondere ha bisogno di un'informazione (esempio: la
+              funzione "login" ha bisogno di nomeutente e password);
+            </li>
+            <li>
+              Patch: si usa per le modifiche per i campi nuovi (desidera SOLO
+              alcuni parametri);
+            </li>
+            <li>
+              Put: si usa per le modifiche globali (desidera tutti i parametri);
+            </li>
+            <li>Delete: si usa per eliminare dei dati;</li>
+          </ul>
+        </li>
+        <li>
+          Status Code: sono stati di risposta (esempio: "Non autorizzato") che
+          influenzano i motori di ricerca;
+        </li>
+        <li>Alcune informazioni le salveremo in un database;</li>
+        <li>
+          Per fare una chiamata asincrona, la sintassi è:
+          <p><code>async function abc() {</code></p>
+          <p>
+            <code>const res = await nomeFunzioneAsincrona;</code> //"Await"
+            serve per attendere l'esecuzione di una funzione asincrona
+          </p>
+          <p><code>return res</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          Per migliorarne la leggibilità, si scrive una funzione asincrona in un
+          modo sincrono (dal basso verso l'alto);
+        </li>
+        <li>
+          "Fetch" è una funzione di tipo asincrono, e permette di mettersi in
+          lista per visualizzare il sito:
+          <p><code>fetch("www.google.com")</code></p>
+        </li>
+        <li>
+          Se una funzione ritorna una promessa, posso raccogliere il risultato
+          della funzione tramite "Async Await" oppure
+          <p><code>fetch ("www.google.com").then()</code></p>
+        </li>
+        <li>
+          L'inferno delle callback (Callback Hell) prevede l'uso di ".catch()"
+          per restituire un errore;
+        </li>
+        <li>
+          Consigli sulla pianificazione dell'attività:
+          <ol>
+            <li>Capire quale progetto dovrà essere fatto;</li>
+            <li>Creare una lista delle cose da fare;</li>
+            <li>Capire cosa serve per farle;</li>
+            <li>Capire quanto tempo prende ogni cosa da fare;</li>
+            <li>
+              Valutare la difficoltà di ogni cosa da fare in maniera numerica
+              (scram poker, ispirato alla gamification);
+            </li>
+          </ol>
+        </li>
+        <li>
+          Creare un file .json con una classe, al suo interno il login e le
+          parole "Path", "Method", "Authenticated: true/false"
+        </li>
+        <li>
+          Il formato "swagger" è una libreria che permette di documentare l'API
+          (da cercare);
+        </li>
+      </ul>
+    </h3>
+  </body>
+</html>
