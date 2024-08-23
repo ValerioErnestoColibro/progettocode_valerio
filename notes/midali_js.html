@@ -1275,8 +1275,184 @@
     <h2>Concetti generali async</h2>
     <h3>
       <ul>
-        <li>Ripassa da "Cosa sono le funzioni?"</li>
-        <li>Ricomincia da 4:16:00</li>
+        <li>
+          Di solito si usa il codice a blocchi (dall'alto verso il basso, ogni
+          task blocca il codice fino a quando non viene processata);
+        </li>
+        <li>
+          Invece la programmazione asincrona ci permette di poter avviare al
+          principio i processi posti alla fine del blocco;
+        </li>
+        <li>
+          I "Worker Thread" sono dei canali di lavorazione differenti in cui
+          possiamo eseguire in background alcune funzioni mentre il blocco
+          procede in maniera classica;
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>
+      Introduzione pratica all'asincrono (da prendere da ChatGPT perchè Midali
+      lo spiega male)
+    </h2>
+    <h3>
+      <ul>
+        <li>
+          L'asincrono in JavaScript è una caratteristica che permette di
+          eseguire operazioni senza bloccare il flusso principale del programma.
+          Questo è particolarmente utile per operazioni che possono richiedere
+          tempo, come richieste di rete, accesso a file, o esecuzioni di
+          database. In JavaScript, ci sono diversi modi per gestire l'asincrono
+        </li>
+        <li>
+          Callback => Il metodo più tradizionale per gestire l'asincrono è
+          attraverso le callback. Una funzione di callback è una funzione
+          passata come argomento ad un'altra funzione e viene eseguita dopo che
+          l'operazione principale è completata. Esempio:
+          <p><code>function doSomethingAsync(callback) {</code></p>
+          <p><code>setTimeout(() => {</code></p>
+          <p><code>console.log("Operazione completata");</code></p>
+          <p><code>callback();</code></p>
+          <p><code>}, 1000);</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>doSomethingAsync(() => {</code></p>
+          <p><code>console.log("Callback eseguita");</code></p>
+          <p><code>});</code></p>
+        </li>
+        <li>
+          Promesse (Promises) => Le promesse rappresentano un risultato di
+          un'operazione asincrona che può essere completata (resolved) o fallita
+          (rejected) in futuro. Esempio:
+          <p><code>function doSomethingAsync() {</code></p>
+          <p><code>return new Promise((resolve, reject) => {</code></p>
+          <p><code>setTimeout(() => {</code></p>
+          <p><code>console.log("Operazione completata");</code></p>
+          <p><code>resolve("Successo");</code></p>
+          <p><code>}, 1000);</code></p>
+          <p><code>});</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>doSomethingAsync()</code></p>
+          <p><code>.then(result => {</code></p>
+          <p><code>console.log(result);</code> Output: "Successo"</p>
+          <p><code>})</code></p>
+          <p><code>.catch(error => {</code></p>
+          <p><code>console.log(error);</code></p>
+          <p><code>});</code></p>
+        </li>
+        <li>
+          Async/Await => Async/Await è una sintassi introdotta in ECMAScript
+          2017 che semplifica il lavoro con le promesse. async è una parola
+          chiave che viene utilizzata per dichiarare una funzione asincrona,
+          mentre await è usata per attendere che una promessa sia risolta.
+          Esempio:
+          <p><code>async function doSomethingAsync() {</code></p>
+          <p><code>return new Promise((resolve, reject) => {</code></p>
+          <p><code>setTimeout(() => {</code></p>
+          <p><code>console.log("Operazione completata");</code></p>
+          <p><code>resolve("Successo");</code></p>
+          <p><code>}, 1000);</code></p>
+          <p><code>});</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>async function main() {</code></p>
+          <p><code>try {</code></p>
+          <p><code>const result = await doSomethingAsync();</code></p>
+          <p><code>console.log(result);</code> Output: "Successo"</p>
+          <p><code>} catch (error) {</code></p>
+          <p><code>console.log(error);</code></p>
+          <p><code>}</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>main();</code></p>
+        </li>
+        <li>
+          Differenze tra le varie chiavi:
+          <ol>
+            <li>
+              Callback: Sono semplici da utilizzare ma possono portare a una
+              struttura di codice complicata e difficile da leggere, nota come
+              "callback hell" o "pyramid of doom".
+            </li>
+            <li>
+              Promesse: Migliorano la leggibilità del codice e la gestione degli
+              errori rispetto alle callback. Tuttavia, possono diventare
+              complesse se ci sono molte operazioni asincrone concatenate.
+            </li>
+            <li>
+              Async/Await: Offre la sintassi più pulita e leggibile per gestire
+              le operazioni asincrone. La gestione degli errori con try/catch è
+              molto più semplice e intuitiva.
+            </li>
+          </ol>
+        </li>
+        <li>
+          In sintesi, l'asincrono in JavaScript permette di eseguire operazioni
+          che potrebbero richiedere tempo senza bloccare il thread principale,
+          migliorando così le prestazioni e la reattività delle applicazioni. Le
+          callback, le promesse e async/await sono i principali metodi per
+          gestire l'asincrono, ognuno con i propri vantaggi e svantaggi.
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Intervalli e Timeout</h2>
+    <h3>
+      <ul>
+        <li>
+          setTimeout ci permette di andare a mettere una pausa in cui eseguire
+          una funzione, setInterval ci fa fare la stessa operazione più volte a
+          distanza di X tempo. Esempi:
+          <p><code>let prova = setTimeout(function(){</code></p>
+          <p><code>alert("Ciao, sono in pausa");</code></p>
+          <p><code>}, 5000);</code> Quel numero è il tempo di attesa;</p>
+        </li>
+        <li>
+          In maniera più pulita, si può anche scrivere:
+          <p><code>let prova = setTimeout(saluta, 5000);</code></p>
+          <br />
+          <p><code>function saluta() {</code></p>
+          <p><code>alert("Ciao, sono in pausa");</code></p>
+          <p><code>}</code></p>
+        </li>
+        <li>
+          Per eventualmente interrompere il setTimeout, puoi scrivere:
+          <p><code>let prova = setTimeout(saluta, 5000);</code></p>
+          <p><code>const btn = document.querySelector("button");</code></p>
+          <br />
+          <p><code>function saluta() {</code></p>
+          <p><code>alert("Ciao, sono in pausa");</code></p>
+          <p><code>}</code></p>
+          <br />
+          <p><code>btn.addEventListener("click", ()=>{</code></p>
+          <p><code>clearTimeout(prova);</code></p>
+          <p><code>});</code></p>
+        </li>
+        <li>Questo processo funziona grazie alla sua natura asincrona;</li>
+        <li>
+          Invece, un esempio per setInterval:
+          <p><code>function displayTime() {</code></p>
+          <p><code>let date = new Date();</code></p>
+          <p><code>console.log(date);</code></p>
+          <p><code>let time = date.toLocateTimeString();</code></p>
+          <p>
+            <code>document.getElementByID("demo").textContent = time;</code> Qui
+            prende i dati da un documento esterno
+          </p>
+          <p><code>}</code></p>
+          <br />
+          <p>
+            <code>const createClock = setInterval(displayTime, 3000);</code>
+          </p>
+        </li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Async & Await</h2>
+    <h3>
+      <ul>
+        <li>4:49:38</li>
       </ul>
     </h3>
     <br />
