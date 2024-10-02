@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&D Dice Roller</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      .dice-container {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #dice {
+        font-size: 100px;
+        margin-bottom: 20px;
+        display: inline-block;
+        transition: transform 0.5s ease;
+      }
+
+      select {
+        font-size: 16px;
+        padding: 5px;
+        margin-top: 10px;
+      }
+
+      @keyframes roll {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(720deg);
+        }
+      }
+
+      .dice.roll {
+        animation: roll 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dice-container">
+      <div id="dice" class="dice">🎲</div>
+
+      <select id="diceType">
+        <option value="4">d4</option>
+        <option value="6">d6</option>
+        <option value="8">d8</option>
+        <option value="10">d10</option>
+        <option value="12">d12</option>
+        <option value="20" selected>d20</option>
+        <option value="100">d100</option>
+      </select>
+
+      <button onclick="rollDice()">Lancia il dado</button>
+      <p id="result">Risultato:</p>
+    </div>
+
+    <script>
+      function rollDice() {
+        const dice = document.getElementById("dice");
+        const result = document.getElementById("result");
+        const diceType = document.getElementById("diceType").value;
+
+        // Applica l'animazione di rotolamento
+        dice.classList.add("roll");
+
+        // Dopo 1 secondo, mostra il risultato e ferma l'animazione
+        setTimeout(() => {
+          const maxRoll = parseInt(diceType); // Prendi il valore del dado selezionato
+          const rollResult = Math.floor(Math.random() * maxRoll) + 1;
+          result.innerText = `Risultato: ${rollResult}`;
+
+          // Rimuove l'animazione
+          dice.classList.remove("roll");
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

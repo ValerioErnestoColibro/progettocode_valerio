@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina di pratica</title>
+    <style>
+      .box {
+        width: 300px;
+        padding: 20px;
+        margin: 20px auto;
+        background-color: #f9f9f9;
+        border: 2px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px rgba (0, 0, 0, 0.1);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Questo è un box con bordo arrotondato e ombra</div>
+    <button onclick="cambiaSfondo()">
+      Clicca e cambia il colore dello sfondo
+    </button>
+    <script>
+      function cambiaSfondo() {
+        let colori = ["ff9999", "#99ff99", "#9999ff", "#ffff99", "#ffcc99"];
+        let coloreCasuale = colori[Math.floor(Math.random() * colori.length)];
+        document.body.style.backgroundColor = coloreCasuale;
+      }
+    </script>
+  </body>
+</html>
