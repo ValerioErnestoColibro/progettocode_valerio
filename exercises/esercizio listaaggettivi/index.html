@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insulta liberamente!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- collegamento del codice HTML al documento CSS -->
+  </head>
+  <body>
+    <div class="container">
+      <!--Contenitore per centrare e stilizzare il contenuto-->
+      <h1>Insulta liberamente!</h1>
+      <div id="loginForm">
+        <!--Form per il login con campi di input e un pulsante-->
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Nome utente" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button onclick="login()">Login</button>
+        <!--Al click, esegui la funzione "login()"-->
+      </div>
+      <div id="descriptionForm" class="hidden">
+        <!--Form per inserire la descrizione della persona, inizialmente nascosto-->
+        <h2>Chi ti va di insultare?</h2>
+        <input
+          type="text"
+          id="personName"
+          placeholder="Nome della persona"
+          required
+        />
+        <input type="text" id="adjective1" placeholder="Aggettivo 1" required />
+        <input type="text" id="adjective2" placeholder="Aggettivo 2" required />
+        <input type="text" id="adjective3" placeholder="Aggettivo 3" required />
+        <button onclick="submitDescription()">Invia</button>
+        <!--Al click, esegui la funzione "submitDescription()"-->
+        <button onclick="logout()">Logout</button>
+        <!--Al click, esegui la funzione "logout()"-->
+      </div>
+      <div id="output" class="hidden">
+        <!--Form per visualizzare la descrizione inserita, inizialmente nascosto-->
+        <h2>Ecco il tuo insulto!</h2>
+        <p id="risultatoDescrizione"></p>
+        <!--Restituisce il testo della descrizione con nome e aggettivi-->
+        <button onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <!--Collega il documento HTML al documento Javascript-->
+  </body>
+</html>

@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif; /*Carattere di base "Arial", con alternativa "sans-serif"*/
+  display: flex; /*Gestisce gli elementi dentro un elemento-contenitore*/
+  justify-content: center; /*Centra gli elementi in "body"*/
+  align-items: center; /*Centra verticalmente gli elementi figlio in "body"*/
+  height: 100vh; /*Setta l'altezza al 100% della finestra del browser (view height)*/
+  margin: 0; /*Rimuove i margini predefiniti*/
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px; /* Definisce il padding (spazio tra contenuto e bordo di un elemento*/
+  border-radius: 10px; /*Arrotonda gli angoli dell'elemento con un raggio di 10px*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*Applica un'ombra esterna al contenitore*/
+  text-align: center;
+}
+
+.hidden {
+  display: none; /*Nasconde gli elementi riferiti a questa classe (guarda il documento js)*/
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  /*Specifica l'aspetto del bottone quando il cursore NON ci passa sopra*/
+  padding: 10px 20px;
+  border: none;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer; /*Cambia il cursore del mouse ad una mano puntatrice quando si passa sopra i pulsanti*/
+}
+
+button:hover {
+  /*Specifica l'aspetto del bottone quando il cursore ci passa sopra*/
+  background-color: red;
+  color: black;
+}

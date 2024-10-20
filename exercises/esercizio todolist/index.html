@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="login-container">
+      <h1>Lista delle cose da fare</h1>
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Nome Utente" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="login-button">Login</button>
+    </div>
+
+    <div id="todo-container" style="display: none">
+      <h1>Lista delle cose da fare</h1>
+      <input type="text" id="new-todo" placeholder="Inserisci cosa fare" />
+      <button id="add-button">Aggiungi</button>
+      <ul id="todo-list"></ul>
+      <button id="logout-button">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
