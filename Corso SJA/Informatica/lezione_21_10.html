@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informatica - Lezione 21/10</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Informatica - Lezione 21/10</h1>
+    <ul>
+      <li>Inizieremo dal linguaggio C;</li>
+      <li>
+        L'architettura di Von Neumann è un modello per computer in cui dati e
+        istruzioni (programmi) vengono memorizzati nella stessa memoria. Il
+        processore accede sequenzialmente alle istruzioni per eseguirle. Queste
+        sono le sue componenti:
+        <ol>
+          <li>Unità di controllo: gestisce l'esecuzione delle istruzioni.</li>
+          <li>
+            Unità logico-aritmetica (ALU): esegue operazioni matematiche e
+            logiche.
+          </li>
+          <li>Memoria: contiene dati e istruzioni.</li>
+          <li>Bus di dati: trasferisce informazioni tra i componenti.</li>
+          <li>Unità di input/output: interagisce con dispositivi esterni.</li>
+        </ol>
+      </li>
+      <li>
+        Più nello specifico, queste sono le parti di un computer:
+        <ol>
+          <li>
+            CPU: È il cervello del computer. La CPU (Central Processing Unit)
+            esegue istruzioni e comandi dai programmi. Si compone di: Unità di
+            Controllo (Control Unit): gestisce il flusso di dati tra i vari
+            componenti. ALU (Arithmetic Logic Unit): esegue operazioni
+            aritmetiche e logiche. La velocità della CPU è misurata in GHz
+            (gigahertz), che indica il numero di operazioni che può eseguire al
+            secondo.
+          </li>
+          <li>
+            La RAM (Random Access Memory) è una memoria temporanea ad alta
+            velocità che memorizza dati e programmi in uso dal sistema. Maggiore
+            è la quantità di RAM, più il computer può eseguire più processi
+            contemporaneamente senza rallentare. La RAM è volatile, il che
+            significa che perde tutte le informazioni quando il computer viene
+            spento.
+          </li>
+          <li>
+            Memoria di Massa: È dove vengono archiviati permanentemente i dati e
+            i programmi. Esistono due tipi principali di memoria di massa: Hard
+            Disk Drive (HDD): dischi magnetici più lenti, ma con maggiore
+            capacità. Solid State Drive (SSD): memorie flash più veloci, ma
+            generalmente più costose.
+          </li>
+          <li>
+            La scheda madre è il circuito principale su cui sono montati i
+            componenti del computer come CPU, RAM e altri. Permette la
+            comunicazione tra i vari dispositivi collegati al computer. Ha slot
+            per collegare componenti aggiuntivi come schede grafiche, schede
+            audio, e schede di rete.
+          </li>
+          <li>
+            L’alimentatore fornisce l’energia elettrica necessaria a tutti i
+            componenti del computer. Converte l’energia dalla presa di corrente
+            in una forma utilizzabile dai circuiti del computer.
+          </li>
+          <li>
+            La GPU (Graphics Processing Unit) è responsabile dell’elaborazione
+            grafica, particolarmente importante per giochi, video e applicazioni
+            che richiedono un’elaborazione visiva avanzata. Nei sistemi di base,
+            la GPU può essere integrata nella scheda madre o nella CPU, mentre
+            nei sistemi più avanzati è una scheda dedicata.
+          </li>
+          <li>
+            Dispositivi -> Dispositivi di Input: tastiera, mouse, microfono e
+            altri strumenti usati per inserire dati nel computer. Dispositivi di
+            Output: monitor, stampanti, altoparlanti, che consentono di
+            visualizzare o riprodurre i dati elaborati.
+          </li>
+          <li>
+            Il bus è il sistema di collegamenti che trasferisce dati tra i vari
+            componenti del computer, come la CPU, la RAM e la scheda grafica.
+            Esistono diversi tipi di bus, tra cui: Bus dati: trasporta i dati;
+            Bus indirizzi: indica dove i dati devono essere trasportati; Bus di
+            controllo: gestisce il funzionamento dei componenti del sistema;
+          </li>
+          <li>
+            La ROM (Read Only Memory) contiene il firmware del computer, cioè le
+            istruzioni fondamentali che permettono l'avvio del sistema. A
+            differenza della RAM, la ROM è non volatile, il che significa che
+            conserva i dati anche quando il computer è spento.
+          </li>
+          <li>
+            I componenti come la CPU e la GPU generano calore durante l’uso. Il
+            sistema di raffreddamento, che può includere ventole o sistemi di
+            raffreddamento a liquido, serve a mantenere la temperatura dei
+            componenti entro un livello sicuro per evitare danni o
+            rallentamenti.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Funzioni delle CPU:
+        <ol>
+          <li>
+            Il processore esegue le istruzioni dei programmi caricate nella
+            memoria. Queste istruzioni sono tradotte in un linguaggio binario
+            comprensibile dalla CPU e poi eseguite una alla volta, a una
+            velocità incredibilmente rapida.
+          </li>
+          <li>
+            La CPU elabora i dati forniti dai programmi o dall'utente, eseguendo
+            operazioni aritmetiche (addizioni, sottrazioni) e logiche (confronti
+            tra valori). Queste operazioni vengono gestite dall'ALU (Arithmetic
+            Logic Unit), una componente chiave del processore.
+          </li>
+          <li>
+            La Unità di Controllo della CPU gestisce il flusso dei dati
+            all'interno del computer, coordinando il trasferimento tra memoria,
+            input/output e altri componenti. Assicura che i dati e le istruzioni
+            arrivino ai posti giusti nel momento giusto.
+          </li>
+          <li>
+            Il processore comunica continuamente con la RAM per recuperare e
+            scrivere dati temporanei. Carica le istruzioni nella RAM prima di
+            elaborarle e conserva temporaneamente i risultati delle operazioni.
+            Tuttavia, la CPU accede anche alla memoria cache per accelerare
+            questi processi, utilizzando dati che potrebbero essere necessari
+            nuovamente a breve.
+          </li>
+          <li>
+            Nei sistemi moderni, la CPU può eseguire più operazioni
+            simultaneamente grazie a tecnologie come il multithreading e il
+            multicore. Un processore può avere più core (unità di elaborazione)
+            che eseguono compiti in parallelo, migliorando notevolmente le
+            prestazioni.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Componenti delle CPU:
+        <ol>
+          <li>
+            Unità Aritmetica e Logica (ALU): L'ALU è responsabile delle
+            operazioni aritmetiche e logiche (come somme, sottrazioni,
+            confronti) che il processore deve eseguire. Questa componente fa il
+            lavoro di calcolo e manipolazione dei dati
+          </li>
+          <li>
+            Unità di Controllo (CU): La CU coordina le attività tra l'ALU, la
+            memoria e i dispositivi di input/output. Interpreta le istruzioni
+            dei programmi e controlla l'esecuzione di tali istruzioni.
+          </li>
+          <li>
+            Registri: I registri sono piccole aree di memoria interne alla CPU
+            che immagazzinano temporaneamente i dati durante l'elaborazione.
+            Sono molto più veloci della RAM e sono utilizzati per operazioni
+            immediate.
+          </li>
+          <li>
+            Cache: La cache è una memoria estremamente veloce posizionata vicino
+            alla CPU. Memorizza temporaneamente i dati e le istruzioni che il
+            processore usa frequentemente, riducendo i tempi di accesso alla
+            memoria principale e migliorando le prestazioni complessive.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Tipi di CPU:
+        <ol>
+          <li>
+            Le CPU più semplici hanno un singolo core, che esegue una singola
+            istruzione alla volta. Sono utilizzate in dispositivi più vecchi o
+            di fascia bassa.
+          </li>
+          <li>
+            Le CPU moderne spesso hanno più core (dual-core, quad-core,
+            octa-core, ecc.). Ogni core può eseguire un’istruzione indipendente,
+            permettendo l’esecuzione simultanea di più operazioni e migliorando
+            le prestazioni con il multitasking.
+          </li>
+          <li>
+            Con l'hyper-threading o altre tecnologie di multithreading, un
+            singolo core può gestire più thread (sotto-processi) in parallelo,
+            simulando l'effetto di avere più core fisici e aumentando
+            l'efficienza.
+          </li>
+          <li>
+            Le CPU x86, utilizzate in computer desktop e laptop, sono potenti ma
+            consumano più energia. Le CPU ARM, invece, sono più efficienti dal
+            punto di vista energetico e sono utilizzate principalmente nei
+            dispositivi mobili come smartphone e tablet.
+          </li>
+        </ol>
+      </li>
+      <li>
+        La velocità della CPU è misurata in GHz (gigahertz), che indica quante
+        operazioni il processore può eseguire ogni secondo. Ad esempio, una CPU
+        da 3 GHz può eseguire 3 miliardi di cicli di elaborazione al secondo.
+        Tuttavia, la frequenza non è l'unico indicatore delle prestazioni,
+        poiché anche l'architettura del processore, il numero di core e la cache
+        influiscono sulla velocità complessiva.
+      </li>
+      <li>
+        Nel corso degli anni, i processori hanno subito enormi sviluppi
+        tecnologici. Dagli inizi con processori a singolo core come l'Intel
+        8086, siamo passati a chip moderni come l'Intel Core i9 o l'AMD Ryzen,
+        che offrono prestazioni incredibili, gestendo grafica avanzata,
+        intelligenza artificiale e applicazioni ad alta intensità di calcolo.
+      </li>
+      <li>
+        I processori dei computer utilizzano una tensione elettrica molto bassa,
+        che varia a seconda del tipo di CPU e della sua generazione. In
+        generale, la tensione operativa della CPU, chiamata anche Core Voltage
+        (VCore), si aggira tra 0,7V e 1,5V. Questo valore può variare in base
+        all'architettura del processore, alle sue prestazioni e alla gestione
+        dell'energia.
+      </li>
+      <li>
+        Tensioni nelle CPU moderne:
+        <ol>
+          <li>
+            Le CPU moderne come gli Intel Core i7, i9 o gli AMD Ryzen
+            tipicamente funzionano a tensioni comprese tra 0,8V e 1,3V. La
+            tensione può essere dinamicamente adattata a seconda del carico di
+            lavoro per migliorare l'efficienza energetica e ridurre il calore
+            generato. Questa tecnologia si chiama Dynamic Voltage and Frequency
+            Scaling (DVFS).
+          </li>
+          <li>
+            Nei dispositivi mobili come smartphone e tablet, i processori ARM,
+            noti per la loro efficienza energetica, utilizzano tensioni ancora
+            più basse, generalmente tra 0,7V e 1,2V, per ridurre il consumo
+            energetico e prolungare la durata della batteria
+          </li>
+        </ol>
+      </li>
+      <li>
+        Tipi di tensione nelle CPU:
+        <ol>
+          <li>
+            Overclocking: Durante l'overclocking (aumento della velocità di
+            clock della CPU oltre le specifiche di fabbrica), si può aumentare
+            la tensione operativa per garantire la stabilità del processore a
+            velocità superiori. Tuttavia, un aumento della tensione comporta
+            anche un incremento del calore prodotto e un maggiore consumo
+            energetico.
+          </li>
+          <li>
+            Undervolting: L'undervolting è la pratica di ridurre la tensione
+            operativa della CPU per ridurre il consumo di energia e il calore,
+            mantenendo comunque prestazioni adeguate. Questa tecnica è utile per
+            sistemi che devono essere efficienti dal punto di vista energetico o
+            per ridurre il rumore delle ventole di raffreddamento.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Il linguaggio macchina è il livello più basso di programmazione ed è
+        costituito da una serie di istruzioni che il processore del computer può
+        eseguire direttamente. Queste istruzioni sono rappresentate in forma di
+        bit, ovvero sequenze di 0 e 1, che corrispondono allo stato on (1) e off
+        (0) dei circuiti elettronici del computer.
+      </li>
+      <li>
+        Funzioni del codice binario:
+        <ol>
+          <li>
+            Ogni istruzione in linguaggio macchina è codificata in una sequenza
+            di bit (0 e 1), che viene interpretata dal processore.
+          </li>
+          <li>
+            Queste sequenze di bit rappresentano operazioni di base, come somma,
+            sottrazione, confronto di valori, o movimento di dati tra registri e
+            memoria.
+          </li>
+        </ol>
+      </li>
+      <li>
+        I programmatori, solitamente, non scrivono direttamente in linguaggio
+        macchina, poiché è difficile da leggere e gestire. Invece, usano
+        linguaggi di programmazione ad alto livello (come Python, Java, C,
+        ecc.), che vengono poi tradotti in linguaggio macchina tramite
+        compilatori o interpreti. Questo processo di traduzione crea il codice
+        binario comprensibile per la CPU.
+      </li>
+      <li>
+        Connettori dietro il computer:
+        <ol>
+          <li>
+            Alimentazione AC: Il cavo di alimentazione che collega il computer
+            alla presa elettrica.
+          </li>
+          <li>
+            HDMI (High-Definition Multimedia Interface): Utilizzato per
+            collegare monitor, TV o proiettori con video e audio digitali.
+          </li>
+          <li>
+            DisplayPort: Simile all'HDMI, supporta video ad alta risoluzione e
+            audio.
+          </li>
+          <li>
+            DVI (Digital Visual Interface): Connettore digitale per monitor.
+          </li>
+          <li>
+            VGA (Video Graphics Array): Connettore analogico, meno comune nei
+            computer moderni.
+          </li>
+          <li>
+            Jack Audio da 3,5 mm: Per collegare cuffie, microfoni e
+            altoparlanti.
+          </li>
+          <li>
+            Porta S/PDIF: Connettore audio digitale per sistemi di alta qualità.
+          </li>
+          <li>
+            USB-A: Il classico connettore USB per dispositivi come mouse,
+            tastiere e chiavette USB.
+          </li>
+          <li>
+            USB-C: Più piccolo e reversibile, usato per dispositivi moderni e
+            per la ricarica.
+          </li>
+          <li>
+            USB 3.0/3.1: Di colore blu o azzurro, offre velocità di
+            trasferimento più elevate.
+          </li>
+          <li>
+            Ethernet (RJ45): Per collegare il computer a una rete cablata (LAN).
+          </li>
+          <li>
+            PS/2: Connettore vecchio, usato per tastiere e mouse (oggi meno
+            comune).
+          </li>
+          <li>Seriale/COM: Per dispositivi legacy come stampanti o modem.</li>
+          <li>
+            Porta Thunderbolt: Utilizzata per connessioni ad alta velocità,
+            anche per monitor e dispositivi di archiviazione.
+          </li>
+          <li>
+            eSATA: Per collegare dispositivi di archiviazione esterni come hard
+            disk.
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        Sistemi di numerazione in Informatica:
+        <ol>
+          <li>
+            Decimale (Base 10): È il sistema che usiamo comunemente nella vita
+            quotidiana. Si basa su 10 cifre: da 0 a 9. Viene usato
+            principalmente per l'interazione tra esseri umani e macchine
+            (input/output), poiché è il sistema più familiare.
+          </li>
+          <li>
+            Binario (Base 2): Si basa su due cifre: 0 e 1. È il linguaggio
+            nativo dei computer, poiché i circuiti elettronici possono
+            rappresentare facilmente due stati (acceso/spento, alto/basso).
+            Tutti i calcoli e le operazioni all'interno dei processori e della
+            memoria vengono eseguiti in binario.
+          </li>
+          <li>
+            Ottale (Base 8): Utilizza otto cifre: da 0 a 7. È meno comune
+            rispetto ad altri sistemi. Storicamente usato in alcuni vecchi
+            sistemi informatici per rappresentare numeri binari in modo più
+            compatto. Ogni cifra ottale rappresenta esattamente tre cifre
+            binarie.
+          </li>
+          <li>
+            Esadecimale (Base 16): Si basa su sedici cifre: da 0 a 9, e da A a
+            F, dove A = 10, B = 11, e così via fino a F = 15. Utilizzato spesso
+            nella programmazione e nello sviluppo di software per rappresentare
+            indirizzi di memoria o codici di colore (ad esempio, nei CSS o nella
+            grafica). Un numero esadecimale rappresenta facilmente quattro cifre
+            binarie
+          </li>
+          <li>
+            Numerazione BCD: Ogni cifra decimale (da 0 a 9) viene rappresentata
+            con il suo equivalente binario a 4 bit. Utilizzato nei sistemi in
+            cui è importante avere una rappresentazione numerica leggibile, come
+            nei display di calcolatrici o orologi digitali.
+          </li>
+          <li>
+            Gray: È un sistema numerico binario in cui solo un bit cambia tra
+            numeri consecutivi. Usato in circuiti digitali per ridurre errori di
+            transizione nei sistemi in cui il cambiamento simultaneo di più bit
+            può causare problemi.
+          </li>
+          <li>
+            UniCode e ASCII: Sistemi per la codifica di caratteri in forma
+            numerica. L'ASCII utilizza 7 bit per codificare 128 caratteri,
+            mentre Unicode supporta milioni di caratteri con diverse lunghezze
+            (da 8 a 32 bit). Usati per rappresentare testi e simboli all'interno
+            dei computer e delle reti.
+          </li>
+        </ol>
+      </li>
+      <li>
+        Differenze tra bit e byte:
+        <ol>
+          <li>
+            Un bit è l'unità più piccola di informazione nel mondo digitale e
+            può assumere solo due valori: 0 o 1, che rappresentano uno stato
+            "spento" o "acceso" nel contesto dell'elettronica digitale. Poiché è
+            l'unità minima, viene utilizzato per rappresentare le singole unità
+            di informazione binaria, come i valori di un'operazione logica o di
+            un singolo componente di memoria. Il bit è usato per misurare la
+            velocità di trasmissione dei dati (es. bps, bit per secondo). Un bit
+            può rappresentare due stati, quindi ha solo 2 possibili valori (0 o
+            1). Un byte può rappresentare 256 stati (2^8 combinazioni di bit),
+            quindi può memorizzare un singolo carattere o un piccolo insieme di
+            dati. I bit sono utilizzati per indicare stati logici e per la
+            velocità di trasmissione dati.
+          </li>
+          <li>
+            Un byte è composto da 8 bit. Questa combinazione di 8 bit consente
+            di rappresentare 256 possibili valori (da 00000000 a 11111111 in
+            binario, ovvero da 0 a 255 in decimale). Il byte è generalmente
+            l'unità di misura base utilizzata per rappresentare informazioni più
+            complesse, come un carattere di testo (ad esempio, una lettera in
+            ASCII), numeri più grandi o pixel in un'immagine. Viene utilizzato
+            per misurare la quantità di dati memorizzati o processati. Le
+            dimensioni di file, memoria RAM e unità di archiviazione vengono
+            misurate in byte o sue unità superiori (KB, MB, GB, ecc.). Un byte
+            può rappresentare 256 stati (2^8 combinazioni di bit), quindi può
+            memorizzare un singolo carattere o un piccolo insieme di dati. I
+            byte vengono utilizzati per rappresentare dati più complessi come
+            testi, immagini, file e per la capacità di memorizzazione.
+          </li>
+          <li>1 bit = 1 valore binario (0 o 1); 1 byte = 8 bit.</li>
+        </ol>
+      </li>
+    </ul>
+  </body>
+</html>
